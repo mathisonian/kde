@@ -90603,7 +90603,7 @@ module.exports = {};
 },{}],"__IDYLL_OPTS__":[function(require,module,exports){
 "use strict";
 
-module.exports = { "ssr": true, "theme": "github", "layout": "blog" };
+module.exports = { "ssr": true, "theme": "./theme.css", "layout": "blog" };
 
 },{}],"__IDYLL_SYNTAX_HIGHLIGHT__":[function(require,module,exports){
 "use strict";
