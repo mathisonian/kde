@@ -22124,7 +22124,7 @@ var RED = '#B02E0C';
 
 // const width = 1200;
 // const height = 400;
-var r = 10;
+var r = 30;
 
 var store = createStore({
   y: linear('y')
@@ -22222,6 +22222,9 @@ var CustomD3Component = function (_D3Component) {
       this.indicatorScale = d3.scaleSqrt().domain([0, 15]).range([3, 7]);
 
       r = width / 100 / 2 - 2;
+      if (width < 800) {
+        r *= 3;
+      }
 
       var svg = this.svg = d3.select(node).append('svg');
       this.fullSVG = svg;

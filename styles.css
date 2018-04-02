@@ -220,6 +220,13 @@ body {
   }
 }
 
+@media (max-width: 800px) {
+  h1 {
+      font-size: 48px;
+      line-height: 52px;
+  }
+}
+
 .idyll-scroll-step {
   background: rgba(255, 255, 255, 0.98);
   padding: 0 30px 30px 30px;
