@@ -21385,7 +21385,117 @@ exports.__esModule = true;
 exports.default = function () {
              return "\n@charset \"UTF-8\";\n\n/* Import ET Book styles\n   adapted from https://github.com/edwardtufte/et-book/blob/gh-pages/et-book.css */\n\n@font-face { font-family: \"et-book\";\n             src: url(\"https://cdn.rawgit.com/edwardtufte/tufte-css/gh-pages/et-book/et-book-roman-line-figures/et-book-roman-line-figures.eot\");\n             src: url(\"https://cdn.rawgit.com/edwardtufte/tufte-css/gh-pages/et-book/et-book-roman-line-figures/et-book-roman-line-figures.eot?#iefix\") format(\"embedded-opentype\"), url(\"https://cdn.rawgit.com/edwardtufte/tufte-css/gh-pages/et-book/et-book-roman-line-figures/et-book-roman-line-figures.woff\") format(\"woff\"), url(\"https://cdn.rawgit.com/edwardtufte/tufte-css/gh-pages/et-book/et-book-roman-line-figures/et-book-roman-line-figures.ttf\") format(\"truetype\"), url(\"https://cdn.rawgit.com/edwardtufte/tufte-css/gh-pages/et-book/et-book-roman-line-figures/et-book-roman-line-figures.svg#etbookromanosf\") format(\"svg\");\n             font-weight: normal;\n             font-style: normal; }\n\n@font-face { font-family: \"et-book\";\n             src: url(\"https://cdn.rawgit.com/edwardtufte/tufte-css/gh-pages/et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.eot\");\n             src: url(\"https://cdn.rawgit.com/edwardtufte/tufte-css/gh-pages/et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.eot?#iefix\") format(\"embedded-opentype\"), url(\"https://cdn.rawgit.com/edwardtufte/tufte-css/gh-pages/et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.woff\") format(\"woff\"), url(\"https://cdn.rawgit.com/edwardtufte/tufte-css/gh-pages/et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.ttf\") format(\"truetype\"), url(\"https://cdn.rawgit.com/edwardtufte/tufte-css/gh-pages/et-book/et-book-display-italic-old-style-figures/et-book-display-italic-old-style-figures.svg#etbookromanosf\") format(\"svg\");\n             font-weight: normal;\n             font-style: italic; }\n\n@font-face { font-family: \"et-book\";\n             src: url(\"https://cdn.rawgit.com/edwardtufte/tufte-css/gh-pages/et-book/et-book-bold-line-figures/et-book-bold-line-figures.eot\");\n             src: url(\"https://cdn.rawgit.com/edwardtufte/tufte-css/gh-pages/et-book/et-book-bold-line-figures/et-book-bold-line-figures.eot?#iefix\") format(\"embedded-opentype\"), url(\"https://cdn.rawgit.com/edwardtufte/tufte-css/gh-pages/et-book/et-book-bold-line-figures/et-book-bold-line-figures.woff\") format(\"woff\"), url(\"https://cdn.rawgit.com/edwardtufte/tufte-css/gh-pages/et-book/et-book-bold-line-figures/et-book-bold-line-figures.ttf\") format(\"truetype\"), url(\"https://cdn.rawgit.com/edwardtufte/tufte-css/gh-pages/et-book/et-book-bold-line-figures/et-book-bold-line-figures.svg#etbookromanosf\") format(\"svg\");\n             font-weight: bold;\n             font-style: normal; }\n\n@font-face { font-family: \"et-book-roman-old-style\";\n             src: url(\"https://cdn.rawgit.com/edwardtufte/tufte-css/gh-pages/et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.eot\");\n             src: url(\"https://cdn.rawgit.com/edwardtufte/tufte-css/gh-pages/et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.eot?#iefix\") format(\"embedded-opentype\"), url(\"https://cdn.rawgit.com/edwardtufte/tufte-css/gh-pages/et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.woff\") format(\"woff\"), url(\"https://cdn.rawgit.com/edwardtufte/tufte-css/gh-pages/et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.ttf\") format(\"truetype\"), url(\"https://cdn.rawgit.com/edwardtufte/tufte-css/gh-pages/et-book/et-book-roman-old-style-figures/et-book-roman-old-style-figures.svg#etbookromanosf\") format(\"svg\");\n             font-weight: normal;\n             font-style: normal; }\n\n\n             .ReactTable{position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;border:1px solid rgba(0,0,0,0.1);}.ReactTable *{box-sizing:border-box}.ReactTable .rt-table{-webkit-box-flex:1;-ms-flex:1;flex:1;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;width:100%;border-collapse:collapse;overflow:auto}.ReactTable .rt-thead{-webkit-box-flex:1;-ms-flex:1 0 auto;flex:1 0 auto;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;}.ReactTable .rt-thead.-headerGroups{background:rgba(0,0,0,0.03);border-bottom:1px solid rgba(0,0,0,0.05)}.ReactTable .rt-thead.-filters{border-bottom:1px solid rgba(0,0,0,0.05);}.ReactTable .rt-thead.-filters .rt-th{border-right:1px solid rgba(0,0,0,0.02)}.ReactTable .rt-thead.-header{box-shadow:0 2px 15px 0 rgba(0,0,0,0.15)}.ReactTable .rt-thead .rt-tr{text-align:center}.ReactTable .rt-thead .rt-th,.ReactTable .rt-thead .rt-td{padding:5px 5px;line-height:normal;position:relative;border-right:1px solid rgba(0,0,0,0.05);-webkit-transition:box-shadow .3s cubic-bezier(.175,.885,.32,1.275);transition:box-shadow .3s cubic-bezier(.175,.885,.32,1.275);box-shadow:inset 0 0 0 0 transparent;}.ReactTable .rt-thead .rt-th.-sort-asc,.ReactTable .rt-thead .rt-td.-sort-asc{box-shadow:inset 0 3px 0 0 rgba(0,0,0,0.6)}.ReactTable .rt-thead .rt-th.-sort-desc,.ReactTable .rt-thead .rt-td.-sort-desc{box-shadow:inset 0 -3px 0 0 rgba(0,0,0,0.6)}.ReactTable .rt-thead .rt-th.-cursor-pointer,.ReactTable .rt-thead .rt-td.-cursor-pointer{cursor:pointer}.ReactTable .rt-thead .rt-th:last-child,.ReactTable .rt-thead .rt-td:last-child{border-right:0}.ReactTable .rt-thead .rt-resizable-header{overflow:visible;}.ReactTable .rt-thead .rt-resizable-header:last-child{overflow:hidden}.ReactTable .rt-thead .rt-resizable-header-content{overflow:hidden;text-overflow:ellipsis}.ReactTable .rt-thead .rt-header-pivot{border-right-color:#f7f7f7}.ReactTable .rt-thead .rt-header-pivot:after,.ReactTable .rt-thead .rt-header-pivot:before{left:100%;top:50%;border:solid transparent;content:\" \";height:0;width:0;position:absolute;pointer-events:none}.ReactTable .rt-thead .rt-header-pivot:after{border-color:rgba(255,255,255,0);border-left-color:#fff;border-width:8px;margin-top:-8px}.ReactTable .rt-thead .rt-header-pivot:before{border-color:rgba(102,102,102,0);border-left-color:#f7f7f7;border-width:10px;margin-top:-10px}.ReactTable .rt-tbody{-webkit-box-flex:99999;-ms-flex:99999 1 auto;flex:99999 1 auto;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;overflow:auto;}.ReactTable .rt-tbody .rt-tr-group{border-bottom:solid 1px rgba(0,0,0,0.05);}.ReactTable .rt-tbody .rt-tr-group:last-child{border-bottom:0}.ReactTable .rt-tbody .rt-td{border-right:1px solid rgba(0,0,0,0.02);}.ReactTable .rt-tbody .rt-td:last-child{border-right:0}.ReactTable .rt-tbody .rt-expandable{cursor:pointer}.ReactTable .rt-tr-group{-webkit-box-flex:1;-ms-flex:1 0 auto;flex:1 0 auto;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch}.ReactTable .rt-tr{-webkit-box-flex:1;-ms-flex:1 0 auto;flex:1 0 auto;display:-webkit-inline-box;display:-ms-inline-flexbox;display:inline-flex}.ReactTable .rt-th,.ReactTable .rt-td{-webkit-box-flex:1;-ms-flex:1 0 0px;flex:1 0 0;white-space:nowrap;text-overflow:ellipsis;padding:7px 5px;overflow:hidden;-webkit-transition:.3s ease;transition:.3s ease;-webkit-transition-property:width,min-width,padding,opacity;transition-property:width,min-width,padding,opacity;}.ReactTable .rt-th.-hidden,.ReactTable .rt-td.-hidden{width:0 !important;min-width:0 !important;padding:0 !important;border:0 !important;opacity:0 !important}.ReactTable .rt-expander{display:inline-block;position:relative;margin:0;color:transparent;margin:0 10px;}.ReactTable .rt-expander:after{content:'';position:absolute;width:0;height:0;top:50%;left:50%;-webkit-transform:translate(-50%,-50%) rotate(-90deg);transform:translate(-50%,-50%) rotate(-90deg);border-left:5.04px solid transparent;border-right:5.04px solid transparent;border-top:7px solid rgba(0,0,0,0.8);-webkit-transition:all .3s cubic-bezier(.175,.885,.32,1.275);transition:all .3s cubic-bezier(.175,.885,.32,1.275);cursor:pointer}.ReactTable .rt-expander.-open:after{-webkit-transform:translate(-50%,-50%) rotate(0);transform:translate(-50%,-50%) rotate(0)}.ReactTable .rt-resizer{display:inline-block;position:absolute;width:36px;top:0;bottom:0;right:-18px;cursor:col-resize;z-index:10}.ReactTable .rt-tfoot{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;box-shadow:0 0 15px 0 rgba(0,0,0,0.15);}.ReactTable .rt-tfoot .rt-td{border-right:1px solid rgba(0,0,0,0.05);}.ReactTable .rt-tfoot .rt-td:last-child{border-right:0}.ReactTable.-striped .rt-tr.-odd{background:rgba(0,0,0,0.03)}.ReactTable.-highlight .rt-tbody .rt-tr:not(.-padRow):hover{background:rgba(0,0,0,0.05)}.ReactTable .-pagination{z-index:1;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;-ms-flex-wrap:wrap;flex-wrap:wrap;padding:3px;box-shadow:0 0 15px 0 rgba(0,0,0,0.1);border-top:2px solid rgba(0,0,0,0.1);}.ReactTable .-pagination .-btn{-webkit-appearance:none;-moz-appearance:none;appearance:none;display:block;width:100%;height:100%;border:0;border-radius:3px;padding:6px;font-size:1em;color:rgba(0,0,0,0.6);background:rgba(0,0,0,0.1);-webkit-transition:all .1s ease;transition:all .1s ease;cursor:pointer;outline:none;}.ReactTable .-pagination .-btn[disabled]{opacity:.5;cursor:default}.ReactTable .-pagination .-btn:not([disabled]):hover{background:rgba(0,0,0,0.3);color:#fff}.ReactTable .-pagination .-previous,.ReactTable .-pagination .-next{-webkit-box-flex:1;-ms-flex:1;flex:1;text-align:center}.ReactTable .-pagination .-center{-webkit-box-flex:1.5;-ms-flex:1.5;flex:1.5;text-align:center;margin-bottom:0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-ms-flex-pack:distribute;justify-content:space-around}.ReactTable .-pagination .-pageInfo{display:inline-block;margin:3px 10px;white-space:nowrap}.ReactTable .-pagination .-pageJump{display:inline-block;}.ReactTable .-pagination .-pageJump input{width:70px;text-align:center}.ReactTable .-pagination .-pageSizeOptions{margin:3px 10px}.ReactTable .rt-noData{display:block;position:absolute;left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);background:rgba(255,255,255,0.8);-webkit-transition:all .3s ease;transition:all .3s ease;z-index:1;pointer-events:none;padding:20px;color:rgba(0,0,0,0.5)}.ReactTable .-loading{display:block;position:absolute;left:0;right:0;top:0;bottom:0;background:rgba(255,255,255,0.8);-webkit-transition:all .3s ease;transition:all .3s ease;z-index:-1;opacity:0;pointer-events:none;}.ReactTable .-loading > div{position:absolute;display:block;text-align:center;width:100%;top:50%;left:0;font-size:15px;color:rgba(0,0,0,0.6);-webkit-transform:translateY(-52%);transform:translateY(-52%);-webkit-transition:all .3s cubic-bezier(.25,.46,.45,.94);transition:all .3s cubic-bezier(.25,.46,.45,.94)}.ReactTable .-loading.-active{opacity:1;z-index:2;pointer-events:all;}.ReactTable .-loading.-active > div{-webkit-transform:translateY(50%);transform:translateY(50%)}.ReactTable input,.ReactTable select{border:1px solid rgba(0,0,0,0.1);background:#fff;padding:5px 7px;font-size:inherit;border-radius:3px;font-weight:normal;outline:none}.ReactTable .rt-resizing .rt-th,.ReactTable .rt-resizing .rt-td{-webkit-transition:none !important;transition:none !important;cursor:col-resize;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}\n/* Tufte CSS styles */\nhtml {\n  font-size: 15px;\n}\n\nbody {\n  background-color: #fffff8;\n}\n\nbody { width: 87.5%;\n       margin-left: auto;\n       margin-right: auto;\n       padding-left: 12.5%;\n       font-family: et-book, Palatino, \"Palatino Linotype\", \"Palatino LT STD\", \"Book Antiqua\", Georgia, serif;\n       background-color: #fffff8;\n       color: #111;\n       max-width: 1400px;\n       counter-reset: sidenote-counter; }\n\n\n.idyll-root { position: relative;\n          padding: 5rem 0rem;\n          margin-left: 0;\n          width: auto;\n          margin: auto; }\n\nh1, .hed { font-weight: 400;\n     margin-top: 4rem;\n     margin-bottom: 1.5rem;\n     font-size: 3.2rem;\n     line-height: 1; }\n\nh2 { font-style: italic;\n     font-weight: 400;\n     margin-top: 2.1rem;\n     margin-bottom: 0;\n     font-size: 2.2rem;\n     line-height: 1; }\n\nh3 { font-style: italic;\n     font-weight: 400;\n     font-size: 1.7rem;\n     margin-top: 2rem;\n     margin-bottom: 0;\n     line-height: 1; }\n\nhr { display: block;\n     height: 1px;\n     width: 55%;\n     border: 0;\n     border-top: 1px solid #ccc;\n     margin: 1em 0;\n     padding: 0; }\n\np.subtitle,\n.dek { font-style: italic;\n             margin-top: 1rem;\n             margin-bottom: 1rem;\n             font-size: 1.8rem;\n             display: block;\n             line-height: 1; }\n\n.numeral { font-family: et-book-roman-old-style; }\n\n.danger { color: red; }\n\nsection { padding-top: 1rem;\n          padding-bottom: 1rem; }\n\np, ol, ul { font-size: 1.4rem; }\n\np { line-height: 2rem;\n    margin-top: 1.4rem;\n    margin-bottom: 1.4rem;\n    padding-right: 0;\n    vertical-align: baseline; }\n\n/* Chapter Epigraphs */\ndiv.epigraph { margin: 5em 0; }\n\ndiv.epigraph > blockquote { margin-top: 3em;\n                            margin-bottom: 3em; }\n\ndiv.epigraph > blockquote, div.epigraph > blockquote > p { font-style: italic; }\n\ndiv.epigraph > blockquote > footer { font-style: normal; }\n\ndiv.epigraph > blockquote > footer > cite { font-style: italic; }\n/* end chapter epigraphs styles */\n\nblockquote { font-size: 1.4rem; }\n\nblockquote p { width: 55%;\n               margin-right: 40px; }\n\nblockquote footer { width: 55%;\n                    font-size: 1.1rem;\n                    text-align: right; }\n\nsection>ol, section>ul { width: 45%;\n                         -webkit-padding-start: 5%;\n                         -webkit-padding-end: 5%; }\n\nli { padding: 0.5rem 0; }\n\nfigure { padding: 0;\n         border: 0;\n         font-size: 100%;\n         font: inherit;\n         vertical-align: baseline;\n         max-width: 55%;\n         -webkit-margin-start: 0;\n         -webkit-margin-end: 0;\n         margin: 0 0 3em 0; }\n\nfigcaption { float: right;\n             clear: right;\n             margin-top: 0;\n             margin-bottom: 0;\n             font-size: 1.1rem;\n             line-height: 1.6;\n             vertical-align: baseline;\n             position: relative;\n             max-width: 40%; }\n\nfigure.fullwidth figcaption { margin-right: 24%; }\n\n/* Links: replicate underline that clears descenders */\na:link, a:visited { color: inherit; }\n\na:link { text-decoration: none;\n         background: -webkit-linear-gradient(#fffff8, #fffff8), -webkit-linear-gradient(#fffff8, #fffff8), -webkit-linear-gradient(#333, #333);\n         background: linear-gradient(#fffff8, #fffff8), linear-gradient(#fffff8, #fffff8), linear-gradient(#333, #333);\n         -webkit-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;\n         -moz-background-size: 0.05em 1px, 0.05em 1px, 1px 1px;\n         background-size: 0.05em 1px, 0.05em 1px, 1px 1px;\n         background-repeat: no-repeat, no-repeat, repeat-x;\n         text-shadow: 0.03em 0 #fffff8, -0.03em 0 #fffff8, 0 0.03em #fffff8, 0 -0.03em #fffff8, 0.06em 0 #fffff8, -0.06em 0 #fffff8, 0.09em 0 #fffff8, -0.09em 0 #fffff8, 0.12em 0 #fffff8, -0.12em 0 #fffff8, 0.15em 0 #fffff8, -0.15em 0 #fffff8;\n         background-position: 0% 93%, 100% 93%, 0% 93%; }\n\n@media screen and (-webkit-min-device-pixel-ratio: 0) { a:link { background-position-y: 87%, 87%, 87%; } }\n\na:link::selection { text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;\n                    background: #b4d5fe; }\n\na:link::-moz-selection { text-shadow: 0.03em 0 #b4d5fe, -0.03em 0 #b4d5fe, 0 0.03em #b4d5fe, 0 -0.03em #b4d5fe, 0.06em 0 #b4d5fe, -0.06em 0 #b4d5fe, 0.09em 0 #b4d5fe, -0.09em 0 #b4d5fe, 0.12em 0 #b4d5fe, -0.12em 0 #b4d5fe, 0.15em 0 #b4d5fe, -0.15em 0 #b4d5fe;\n                         background: #b4d5fe; }\n\n/* Sidenotes, margin notes, figures, captions */\nimg { max-width: 100%; }\n\n.aside, .sidenote, .marginnote { float: right;\n                         clear: right;\n                         margin-right: -60%;\n                         width: 50%;\n                         margin-top: 0;\n                         margin-bottom: 0;\n                         font-size: 1.1rem;\n                         line-height: 1.3;\n                         vertical-align: baseline;\n                         position: relative; }\n\n.sidenote-number { counter-increment: sidenote-counter; }\n\n.sidenote-number:after, .sidenote:before { content: counter(sidenote-counter) \" \";\n                                           font-family: et-book-roman-old-style;\n                                           position: relative;\n                                           vertical-align: baseline; }\n\n.sidenote-number:after { content: counter(sidenote-counter);\n                         font-size: 1rem;\n                         top: -0.5rem;\n                         left: 0.1rem; }\n\n.sidenote:before { content: counter(sidenote-counter) \" \";\n                   top: -0.5rem; }\n\nblockquote .sidenote, blockquote .marginnote, blockquote .aside { margin-right: -82%;\n                                               min-width: 59%;\n                                               text-align: left; }\n\np, footer, table, .aside-container { width: 55%; }\n.aside-container {\n  position: static;\n}\ndiv.fullwidth, table.fullwidth { width: 100%; }\n\ndiv.table-wrapper { overflow-x: auto;\n                    font-family: \"Trebuchet MS\", \"Gill Sans\", \"Gill Sans MT\", sans-serif; }\n\n.sans { font-family: \"Gill Sans\", \"Gill Sans MT\", Calibri, sans-serif;\n        letter-spacing: .03em; }\n\ncode { font-family: Consolas, \"Liberation Mono\", Menlo, Courier, monospace;\n       font-size: 1.0rem;\n       line-height: 1.42; }\n\n.sans > code { font-size: 1.2rem; }\n\nh1 > code, h2 > code, h3 > code { font-size: 0.80em; }\n\n.marginnote > code, .sidenote > code { font-size: 1rem; }\n\npre.code { font-size: 0.9rem;\n           width: 52.5%;\n           margin-left: 2.5%;\n           overflow-x: auto; }\n\npre.code.fullwidth { width: 90%; }\n\n.fullwidth { max-width: 90%;\n             clear:both; }\n\nspan.newthought { font-variant: small-caps;\n                  font-size: 1.2em; }\n\ninput.margin-toggle { display: none; }\n\nlabel.sidenote-number { display: inline; }\n\nlabel.margin-toggle:not(.sidenote-number) { display: none; }\n\n@media (max-width: 760px) { body { width: 84%;\n                                   padding-left: 8%;\n                                   padding-right: 8%; }\n                            p, footer { width: 100%; }\n                            pre.code { width: 97%; }\n                            ul { width: 85%; }\n                            figure { max-width: 90%; }\n                            figcaption, figure.fullwidth figcaption { margin-right: 0%;\n                                                                      max-width: none; }\n                            blockquote { margin-left: 1.5em;\n                                         margin-right: 0em; }\n                            blockquote p, blockquote footer { width: 100%; }\n                            label.margin-toggle:not(.sidenote-number) { display: inline; }\n                            .sidenote, .marginnote { display: none; }\n                            .margin-toggle:checked + .sidenote,\n                            .margin-toggle:checked + .marginnote { display: block;\n                                                                   float: left;\n                                                                   left: 1rem;\n                                                                   clear: both;\n                                                                   width: 95%;\n                                                                   margin: 1rem 2.5%;\n                                                                   vertical-align: baseline;\n                                                                   position: relative; }\n                            label { cursor: pointer; }\n                            div.table-wrapper, table { width: 85%; }\n                            img { width: 100%; } }\n\n";
 };
-},{}],"/Users/mathisonian/projects/kde/components/default/dynamic.js":[function(require,module,exports){
+},{}],"/Users/mathisonian/projects/kde/components/blue.js":[function(require,module,exports){
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var React = require('react');
+
+var BLUE = '#090C9B';
+var RED = '#B02E0C';
+
+var Blue = function (_React$Component) {
+  _inherits(Blue, _React$Component);
+
+  function Blue() {
+    _classCallCheck(this, Blue);
+
+    return _possibleConstructorReturn(this, (Blue.__proto__ || Object.getPrototypeOf(Blue)).apply(this, arguments));
+  }
+
+  _createClass(Blue, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          hasError = _props.hasError,
+          updateProps = _props.updateProps,
+          children = _props.children,
+          props = _objectWithoutProperties(_props, ['hasError', 'updateProps', 'children']);
+
+      return React.createElement(
+        'span',
+        { style: { color: BLUE, textDecoration: 'underline' } },
+        children
+      );
+    }
+  }]);
+
+  return Blue;
+}(React.Component);
+
+module.exports = Blue;
+
+},{"react":"/Users/mathisonian/projects/node_modules/react/index.js"}],"/Users/mathisonian/projects/kde/components/default/analytics.js":[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Analytics = function (_React$PureComponent) {
+  _inherits(Analytics, _React$PureComponent);
+
+  function Analytics() {
+    _classCallCheck(this, Analytics);
+
+    return _possibleConstructorReturn(this, (Analytics.__proto__ || Object.getPrototypeOf(Analytics)).apply(this, arguments));
+  }
+
+  _createClass(Analytics, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      try {
+        (function (i, s, o, g, r, a, m) {
+          i['GoogleAnalyticsObject'] = r;i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments);
+          }, i[r].l = 1 * new Date();a = s.createElement(o), m = s.getElementsByTagName(o)[0];a.async = 1;a.src = g;m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', this.props.google, 'auto');
+
+        window.ga('send', 'pageview', {
+          tag: this.props.tag
+        });
+      } catch (e) {
+        console.log('Could not mount Analytics.');
+      }
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return null;
+    }
+  }]);
+
+  return Analytics;
+}(_react2.default.PureComponent);
+
+exports.default = Analytics;
+
+},{"react":"/Users/mathisonian/projects/node_modules/react/index.js"}],"/Users/mathisonian/projects/kde/components/default/dynamic.js":[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -21774,6 +21884,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = require('react');
@@ -21800,7 +21912,7 @@ var Link = function (_React$PureComponent) {
   _createClass(Link, [{
     key: 'render',
     value: function render() {
-      var props = this.props;
+      var props = _extends({}, this.props);
       if (props.url) {
         props.href = props.url;
       }
@@ -21928,13 +22040,25 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var TextContainer = function (_React$PureComponent) {
   _inherits(TextContainer, _React$PureComponent);
 
-  function TextContainer() {
+  function TextContainer(props) {
     _classCallCheck(this, TextContainer);
 
-    return _possibleConstructorReturn(this, (TextContainer.__proto__ || Object.getPrototypeOf(TextContainer)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (TextContainer.__proto__ || Object.getPrototypeOf(TextContainer)).call(this, props));
+
+    _this.state = {
+      windowSize: 1600
+    };
+    return _this;
   }
 
   _createClass(TextContainer, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.setState({
+        windowSize: window.innerWidth
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
       var _props = this.props,
@@ -21955,7 +22079,7 @@ var TextContainer = function (_React$PureComponent) {
 
       var style = _extends({}, layout, theme);
       var cn = (className || '') + ' idyll-text-container';
-      if (window && window.innerWidth < 800) {
+      if (this.state.windowSize < 800) {
         style.marginLeft = 0;
       }
       return _react2.default.createElement(
@@ -21995,9 +22119,12 @@ var _require2 = require('curve-store/lib/samplers'),
 var gaussian = require('gaussian');
 var distribution = gaussian(0, 1);
 
+var BLUE = '#090C9B';
+var RED = '#B02E0C';
+
 // const width = 1200;
 // const height = 400;
-var r = 10;
+var r = 30;
 
 var store = createStore({
   y: linear('y')
@@ -22090,11 +22217,14 @@ var CustomD3Component = function (_D3Component) {
       var x = this.x = d3.scaleLinear().range([r, width - r]);
       var y = this.y = d3.scaleLinear().range([r, height - r]);
       this.estimateY = d3.scaleLinear().domain([0, 10]).range([height - 2 * r, 2 * r]);
-      this.kernalScale = d3.scaleLinear().domain([0, 20]).range([height - 2 * r, 2 * r]);
+      this.kernelScale = d3.scaleLinear().domain([0, 20]).range([height - 2 * r, 2 * r]);
       this.distanceScale = d3.scaleLinear().domain([0, 10]).range(['#222', '#fff']);
       this.indicatorScale = d3.scaleSqrt().domain([0, 15]).range([3, 7]);
 
       r = width / 100 / 2 - 2;
+      if (width < 800) {
+        r *= 3;
+      }
 
       var svg = this.svg = d3.select(node).append('svg');
       this.fullSVG = svg;
@@ -22108,15 +22238,15 @@ var CustomD3Component = function (_D3Component) {
       var cGroup = svg.append('g');
       this.estimateGroup = svg.append('g');
       this.estimatePath = this.estimateGroup.append('path').attr('stroke', 'green').style('fill', 'rgba(0, 0, 0, 0)');
-      this.estimateIndicator = this.estimateGroup.append('circle').style('fill', 'blue').attr('r', 0);
-      this.estimateIndicatorLine = this.estimateGroup.append('line').style('stroke', 'blue').attr('stroke-dasharray', '5, 5').attr('x1', 0).attr('x2', 0).attr('y1', 0).attr('y1', 0);
-      this.kernalPath = svg.append('g').append('path').attr('stroke', 'red');
+      this.estimateIndicator = this.estimateGroup.append('circle').style('fill', BLUE).attr('r', 0);
+      this.estimateIndicatorLine = this.estimateGroup.append('line').style('stroke', BLUE).attr('stroke-dasharray', '5, 5').style('stroke-width', 3).attr('x1', 0).attr('x2', 0).attr('y1', 0).attr('y1', 0);
+      this.kernelPath = svg.append('g').append('path').attr('stroke', RED).style('stroke-width', 2);
       svg = this.svg = cGroup;
       this.pointMaker = svg.append('circle').attr('r', r + 3).attr('cx', x(0.5)).attr('cy', y(0.5)).style('opacity', 0).style('fill', '#e9e9e9');
 
-      this.setKernal(this.props.kernal);
-      this.kernal = this.kernalFunc(this.props.k);
-      this.estimator = this.kernelDensityEstimator(this.kernal, x.ticks(40));
+      this.setKernel(this.props.kernel);
+      this.kernel = this.kernelFunc(this.props.k);
+      this.estimator = this.kernelDensityEstimator(this.kernel, x.ticks(40));
       this.density = [];
 
       d3.range(350).map(function () {
@@ -22188,54 +22318,58 @@ var CustomD3Component = function (_D3Component) {
     value: function showCircleDistance(x) {
       var _this4 = this;
 
-      var kernal = this.kernal,
+      var kernel = this.kernel,
           distanceScale = this.distanceScale;
       var k = this.props.k;
 
 
       requestAnimationFrame(function () {
         circles.forEach(function (c) {
-          c.style('fill', distanceScale(kernal(x - +c.attr('nx'))));
+          c.style('fill', distanceScale(kernel(x - +c.attr('nx'))));
         });
         _this4.circleFill = function (c) {
           return function () {
-            return distanceScale(kernal(x - +c.attr('nx')));
+            return distanceScale(kernel(x - +c.attr('nx')));
           };
         };
       });
     }
   }, {
-    key: 'drawKernal',
-    value: function drawKernal(nx) {
+    key: 'drawKernel',
+    value: function drawKernel(nx) {
       var x = this.x,
-          kernalScale = this.kernalScale,
-          kernal = this.kernal,
-          kernalPath = this.kernalPath,
-          kernalGroup = this.kernalGroup,
+          kernelScale = this.kernelScale,
+          kernel = this.kernel,
+          kernelPath = this.kernelPath,
+          kernelGroup = this.kernelGroup,
           k = this.k;
 
       var points = [];
       d3.range(-0.15, .15, 0.001).map(function (d) {
         points.push(d);
-        // kernalGroup.append('circle')
+        // kernelGroup.append('circle')
         //   .attr('cx', x(nx + d))
-        //   .attr('cy', kernalScale(kernal(d)))
+        //   .attr('cy', kernelScale(kernel(d)))
         //   .attr('fill', 'red')
         //   .attr('r', 2);
       });
 
-      kernalPath.datum(points).attr("stroke-linejoin", "round").attr('fill', 'none').attr("d", d3.line()
+      kernelPath.datum(points).attr("stroke-linejoin", "round").attr('fill', 'none').attr("d", d3.line()
       // .curve(d3.curveBasis)
       .x(function (d) {
         // console.log(d);
         return x(nx + d);
       }).y(function (d) {
-        return kernalScale(kernal(d));
+        return kernelScale(kernel(d));
       }));
     }
   }, {
     key: 'updateEstimateLine',
     value: function updateEstimateLine(nx) {
+      var x = this.x,
+          estimateY = this.estimateY,
+          indicatorScale = this.indicatorScale;
+
       var sy = store.sample(nx).y;
       this.estimateIndicator.attr('r', indicatorScale(sy)).attr('cx', x(nx)).attr('cy', estimateY(sy));
       this.estimateIndicatorLine
@@ -22282,7 +22416,7 @@ var CustomD3Component = function (_D3Component) {
           // this.showCircleDistance(0.8);
           var nx = this.nx = 0.8;
           this.showCircleDistance(nx);
-          this.drawKernal(nx);
+          this.drawKernel(nx);
           this.updateEstimateLine(nx);
           this.fullSVG.on('mousemove', function () {
             if (_this5.fixPosition) {
@@ -22290,7 +22424,7 @@ var CustomD3Component = function (_D3Component) {
             }
             var nx = _this5.nx = x.invert(d3.event.pageX);
             _this5.showCircleDistance(nx);
-            _this5.drawKernal(nx);
+            _this5.drawKernel(nx);
             _this5.updateEstimateLine(nx);
           });
           // this.estimatePath.on('mousemove', () => {
@@ -22311,32 +22445,32 @@ var CustomD3Component = function (_D3Component) {
       }
     }
   }, {
-    key: 'setKernal',
-    value: function setKernal(kernal) {
-      switch (kernal) {
+    key: 'setKernel',
+    value: function setKernel(kernel) {
+      switch (kernel) {
         case "epanechnikov":
-          this.kernalFunc = this.kernelEpanechnikov;
+          this.kernelFunc = this.kernelEpanechnikov;
           this.estimateY.domain([0, 2 * 10 / this.props.amplitude]);
-          this.kernalScale.domain([0, 10 * 10 / this.props.amplitude]);
+          this.kernelScale.domain([0, 10 * 10 / this.props.amplitude]);
           this.distanceScale.domain([0, 15]);
           break;
         case "uniform":
 
-          this.kernalFunc = this.kernelUniform;
+          this.kernelFunc = this.kernelUniform;
           this.estimateY.domain([0, 1 / this.props.amplitude]);
-          this.kernalScale.domain([0, 10 / this.props.amplitude]);
+          this.kernelScale.domain([0, 10 / this.props.amplitude]);
           this.distanceScale.domain([0, 0.33]);
           break;
         case "triangular":
-          this.kernalFunc = this.kernelTriangular;
+          this.kernelFunc = this.kernelTriangular;
           this.estimateY.domain([0, 1 / this.props.amplitude]);
-          this.kernalScale.domain([0, 10 / this.props.amplitude]);
+          this.kernelScale.domain([0, 10 / this.props.amplitude]);
           this.distanceScale.domain([0, 0.33]);
           break;
         case "normal":
-          this.kernalFunc = this.kernelGaussian;
+          this.kernelFunc = this.kernelGaussian;
           this.estimateY.domain([0, 1 / this.props.amplitude]);
-          this.kernalScale.domain([0, 10 / this.props.amplitude]);
+          this.kernelScale.domain([0, 10 / this.props.amplitude]);
           this.distanceScale.domain([0, 0.33]);
           break;
         default:
@@ -22352,17 +22486,17 @@ var CustomD3Component = function (_D3Component) {
           estimateY = this.estimateY,
           estimatePath = this.estimatePath;
 
-      console.log(props.kernal);
-      if (this.props.kernal !== props.kernal || this.props.amplitude !== props.amplitude) {
-        console.log('updating kernal');
-        this.setKernal(props.kernal);
+      console.log(props.kernel);
+      if (this.props.kernel !== props.kernel || this.props.amplitude !== props.amplitude) {
+        console.log('updating kernel');
+        this.setKernel(props.kernel);
       }
-      if (this.props.k !== props.k || this.props.kernal !== props.kernal || this.props.amplitude !== props.amplitude) {
-        this.kernal = this.kernalFunc(props.k);
-        this.estimator = this.kernelDensityEstimator(this.kernal, x.ticks(100));
+      if (this.props.k !== props.k || this.props.kernel !== props.kernel || this.props.amplitude !== props.amplitude) {
+        this.kernel = this.kernelFunc(props.k);
+        this.estimator = this.kernelDensityEstimator(this.kernel, x.ticks(100));
         console.log(points);
         this.density = this.estimator(points);
-        this.drawKernal(this.nx);
+        this.drawKernel(this.nx);
         if (props.state === 'build-estimate') {
           this.showCircleDistance(this.nx);
         }
@@ -22374,6 +22508,8 @@ var CustomD3Component = function (_D3Component) {
           store.set(d[0], { y: d[1] });
           return estimateY(d[1]);
         }));
+
+        this.updateEstimateLine(this.nx);
       } else if (props.state !== this.props.state) {
         this.setStatus(props.state, this.props.state);
       }
@@ -22385,7 +22521,56 @@ var CustomD3Component = function (_D3Component) {
 
 module.exports = CustomD3Component;
 
-},{"curve-store":"/Users/mathisonian/projects/kde/node_modules/curve-store/lib/index.js","curve-store/lib/samplers":"/Users/mathisonian/projects/kde/node_modules/curve-store/lib/samplers/index.js","d3":"/Users/mathisonian/projects/kde/node_modules/d3/build/d3.node.js","gaussian":"/Users/mathisonian/projects/kde/node_modules/gaussian/lib/gaussian.js","idyll-d3-component":"/Users/mathisonian/projects/node_modules/idyll-d3-component/lib.js","react":"/Users/mathisonian/projects/node_modules/react/index.js"}],"/Users/mathisonian/projects/kde/components/scroller.js":[function(require,module,exports){
+},{"curve-store":"/Users/mathisonian/projects/kde/node_modules/curve-store/lib/index.js","curve-store/lib/samplers":"/Users/mathisonian/projects/kde/node_modules/curve-store/lib/samplers/index.js","d3":"/Users/mathisonian/projects/kde/node_modules/d3/build/d3.node.js","gaussian":"/Users/mathisonian/projects/kde/node_modules/gaussian/lib/gaussian.js","idyll-d3-component":"/Users/mathisonian/projects/node_modules/idyll-d3-component/lib.js","react":"/Users/mathisonian/projects/node_modules/react/index.js"}],"/Users/mathisonian/projects/kde/components/red.js":[function(require,module,exports){
+'use strict';
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var React = require('react');
+
+var BLUE = '#090C9B';
+var RED = '#B02E0C';
+
+var Red = function (_React$Component) {
+  _inherits(Red, _React$Component);
+
+  function Red() {
+    _classCallCheck(this, Red);
+
+    return _possibleConstructorReturn(this, (Red.__proto__ || Object.getPrototypeOf(Red)).apply(this, arguments));
+  }
+
+  _createClass(Red, [{
+    key: 'render',
+    value: function render() {
+      var _props = this.props,
+          hasError = _props.hasError,
+          updateProps = _props.updateProps,
+          children = _props.children,
+          props = _objectWithoutProperties(_props, ['hasError', 'updateProps', 'children']);
+
+      return React.createElement(
+        'span',
+        { style: { color: RED, textDecoration: 'underline' } },
+        children
+      );
+    }
+  }]);
+
+  return Red;
+}(React.Component);
+
+module.exports = Red;
+
+},{"react":"/Users/mathisonian/projects/node_modules/react/index.js"}],"/Users/mathisonian/projects/kde/components/scroller.js":[function(require,module,exports){
 'use strict';
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
@@ -22404,9 +22589,6 @@ var _require = require('idyll-component-children'),
     filterChildren = _require.filterChildren;
 
 var d3 = require('d3');
-
-require('intersection-observer');
-var scrollama = require('scrollama');
 
 var SCROLL_STEP_MAP = {};
 var SCROLL_NAME_MAP = {};
@@ -22474,6 +22656,8 @@ var Scroller = function (_React$Component) {
   _createClass(Scroller, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      require('intersection-observer');
+      var scrollama = require('scrollama');
       // instantiate the scrollama
       var scroller = scrollama();
       this.handleResize();
@@ -90455,7 +90639,7 @@ arguments[4]["/Users/mathisonian/projects/idyll/idyll/node_modules/react/index.j
 },{"./cjs/react.development.js":"/Users/mathisonian/projects/node_modules/react/cjs/react.development.js","./cjs/react.production.min.js":"/Users/mathisonian/projects/node_modules/react/cjs/react.production.min.js"}],"__IDYLL_AST__":[function(require,module,exports){
 "use strict";
 
-module.exports = [["var", [["name", ["value", "state"]], ["value", ["value", "title"]]], []], ["var", [["name", ["value", "k"]], ["value", ["value", 0.05]]], []], ["var", [["name", ["value", "kernel"]], ["value", ["value", "epanechnikov"]]], []], ["var", [["name", ["value", "amplitude"]], ["value", ["value", 3]]], []], ["TextContainer", [], [["meta", [["title", ["value", "Kernel Density Estimation"]], ["description", ["value", "A useful statistical tool that sounds scarier than it is."]], ["twitterHandle", ["value", "mathisonian"]]], []]]], ["Fixed", [], [["KDEVisualizer", [["state", ["variable", "state"]], ["k", ["variable", "k"]], ["kernel", ["variable", "kernel"]], ["amplitude", ["variable", "amplitude"]]], []]]], ["TextContainer", [], [["Scroller", [["currentState", ["variable", "state"]]], [["Step", [["className", ["value", "header"]]], [["Header", [["title", ["value", "Kernel Density Estimation"]], ["author", ["value", "Matthew Conlen"]], ["authorLink", ["value", "https://mathisonian.com"]]], []]]], ["Step", [["state", ["value", "start-drop"]]], [["p", [], ["\n    Kernel density estimation is a really useful statistical tool\n    with an intimidating name.\n    Often shortened to ", ["strong", [], ["KDE"]], ", it’s a technique\n    that let’s you create a smooth curve given a set of data."]], ["p", [], ["This can be useful if you want to visualize just the\n    “shape” of some data, as a kind of continuous replacement for the discrete histogram.\n    It can also be used to generate points that\n    ", ["em", [], ["look like they came from a certain dataset"]], " - this behavior can power simple\n    simulations, where simulated objects are modeled off of real data."]], ["p", [], ["I hope this article provides some intuition for how KDE works.\n  "]]]], ["Step", [["state", ["value", "show-generator"]]], [["p", [], ["\n    To understand how KDE is used in practice, let’s start with some points. The white circles on\n    your screen were sampled from some unknown distribution."]], ["p", [], ["As more points build up, their silhouette will roughly correspond to that distribution, however\n    we have no way of knowing its true value.\n  "]]]], ["Step", [["state", ["value", "show-estimate"]]], [["p", [], ["\n    The blue line shows an estimate of the underlying distribution, this is what KDE produces."]], ["p", [], ["The KDE algorithm takes a parameter, ", ["em", [], ["bandwidth"]], ", that affects how “smooth” the resulting\n    curve is. Use the control below to modify bandwidth, and notice how the estimate changes."]], ["p", [], ["Bandwidth: ", ["Dynamic", [["value", ["variable", "k"]], ["min", ["value", 0.001]], ["max", ["value", 0.1]], ["step", ["value", 0.001]]], []]]]]], ["Step", [["state", ["value", "build-estimate"]]], [["p", [], ["\n    The KDE is calculated by weighting the distances of all the data points we’ve seen\n    for each location on the blue line. If we’ve seen more points nearby, the blue line is\n    higher, indicating that probability of seeing a point at that location."]], ["p", [], ["Move your mouse over the graphic to see how the data points contribute to the estimation —\n    the “brighter” a selection is, the more likely that location is.\n    The red curve indicates how the point distances are weighted, and is called the ", ["em", [], ["kernel function"]], "."]], ["p", [], ["Bandwidth: ", ["Dynamic", [["value", ["variable", "k"]], ["min", ["value", 0.001]], ["max", ["value", 0.1]], ["step", ["value", 0.001]]], []]]], ["p", [], ["Next we’ll see how different kernel functions affect the estimate.\n  "]]]], ["Step", [], [["p", [], ["\n    The concept of weighting the distances of our observations from a particular point, ", ["equation", [["latex", ["value", "x"]]], []], ",\n    can be expressed mathematically as follows:"]], ["equation", [["display", ["value", true]]], ["\\hat{f}(x) =  \\sum_{observations}^{}{K(\\frac{x - observation}{bandwidth})}"]], ["p", [], ["The variable ", ["equation", [["latex", ["value", "K"]]], []], " represents the kernel function. Using different\n    kernel functions will produce different estimates. Use the dropdown to see how changing the kernel affects the estimate."]], ["p", [], ["Kernel:\n    ", ["Select", [["value", ["variable", "kernal"]], ["options", ["expression", "[\n      {label:\"Epanechnikov\", value:\"epanechnikov\"},\n      {label: \"Normal\", value: \"normal\"},\n      {label: \"Uniform\", value: \"uniform\"},\n      {label: \"Triangular\", value: \"triangular\"}\n      ]"]]], []], ["br", [], []], "\n    Bandwidth: ", ["Dynamic", [["value", ["variable", "k"]], ["min", ["value", 0.001]], ["max", ["value", 10]], ["step", ["value", 0.001]]], []], ["br", [], []], "\n    Amplitude: ", ["Dynamic", [["value", ["variable", "amplitude"]], ["min", ["value", 0.1]], ["max", ["value", 10]], ["step", ["value", 0.1]]], []]]]]], ["Step", [], [["p", [], ["That’s all for now, thanks for reading! I’ll be making more of these\n    quick explainer posts, so if you have an idea for a concept you’d like\n    to see, ", ["link", [["url", ["value", "https://twitter.com/mathisonian"]], ["text", ["value", "reach out on twitter"]]], []], "."]], ["p", [], ["Here are a few useful links:"]], ["ul", [], [["li", [], [["p", [], [["link", [["text", ["value", "Learn more about kernal density estimation"]], ["href", ["value", "https://en.wikipedia.org/wiki/Kernel_density_estimation"]]], []], "."]]]], ["li", [], [["p", [], [["link", [["text", ["value", "Idyll: the software used to write this post"]], ["href", ["value", "https://idyll-lang.org/"]]], []], "."]]]], ["li", [], [["p", [], [["link", [["text", ["value", "A D3 + JavaScript KDE reference"]], ["href", ["value", "https://bl.ocks.org/mbostock/4341954"]]], []], "."]]]]]]]]]]]]];
+module.exports = [["var", [["name", ["value", "state"]], ["value", ["value", "title"]]], []], ["var", [["name", ["value", "k"]], ["value", ["value", 0.05]]], []], ["var", [["name", ["value", "kernel"]], ["value", ["value", "epanechnikov"]]], []], ["var", [["name", ["value", "amplitude"]], ["value", ["value", 3]]], []], ["TextContainer", [], []], ["Fixed", [], [["KDEVisualizer", [["state", ["variable", "state"]], ["k", ["variable", "k"]], ["kernel", ["variable", "kernel"]], ["amplitude", ["variable", "amplitude"]]], []]]], ["TextContainer", [], [["Scroller", [["currentState", ["variable", "state"]]], [["Step", [["className", ["value", "header"]]], [["Header", [["title", ["value", "Kernel Density Estimation"]], ["author", ["value", "Matthew Conlen"]], ["authorLink", ["value", "https://mathisonian.com"]]], []]]], ["Step", [["state", ["value", "start-drop"]]], [["p", [], ["\n    Kernel density estimation is a really useful statistical tool\n    with an intimidating name.\n    Often shortened to ", ["strong", [], ["KDE"]], ", it’s a technique\n    that let’s you create a smooth curve given a set of data."]], ["p", [], ["This can be useful if you want to visualize just the\n    “shape” of some data, as a kind of continuous replacement for the discrete histogram.\n    It can also be used to generate points that\n    ", ["em", [], ["look like they came from a certain dataset"]], " - this behavior can power simple\n    simulations, where simulated objects are modeled off of real data."]], ["p", [], ["I hope this article provides some intuition for how KDE works.\n  "]]]], ["Step", [["state", ["value", "show-generator"]]], [["p", [], ["\n    To understand how KDE is used in practice, let’s start with some points. The white circles on\n    your screen were sampled from some unknown distribution."]], ["p", [], ["As more points build up, their silhouette will roughly correspond to that distribution, however\n    we have no way of knowing its true value.\n  "]]]], ["Step", [["state", ["value", "show-estimate"]]], [["p", [], ["\n    The ", ["Blue", [], ["blue line"]], " shows an estimate of the underlying distribution, this is what KDE produces."]], ["p", [], ["The KDE algorithm takes a parameter, ", ["em", [], ["bandwidth"]], ", that affects how “smooth” the resulting\n    curve is. Use the control below to modify bandwidth, and notice how the estimate changes."]], ["p", [], ["Bandwidth: ", ["Dynamic", [["value", ["variable", "k"]], ["min", ["value", 0.001]], ["max", ["value", 0.1]], ["step", ["value", 0.001]]], []]]]]], ["Step", [["state", ["value", "build-estimate"]]], [["p", [], ["\n    The KDE is calculated by weighting the distances of all the data points we’ve seen\n    for each location on the ", ["Blue", [], ["blue line"]], ". If we’ve seen more points nearby, the estimate is\n    higher, indicating that probability of seeing a point at that location."]], ["p", [], ["Move your mouse over the graphic to see how the data points contribute to the estimation —\n    the “brighter” a selection is, the more likely that location is.\n    The ", ["Red", [], ["red curve"]], " indicates how the point distances are weighted, and is called the ", ["em", [], ["kernel function"]], ". The points are colored according to this function."]], ["p", [], [["em", [], ["Click to lock the kernel function to a particular location."]], "\n  "]]]], ["Step", [], [["p", [], ["\n    Changing the bandwidth changes the shape of the kernel: a lower bandwidth means only points very close to the current position are given any weight, which leads to the ", ["Blue", [], ["estimate"]], " looking squiggly; a higher bandwidth means a shallow kernel where distant points can contribute."]], ["p", [], ["Bandwidth: ", ["Dynamic", [["value", ["variable", "k"]], ["min", ["value", 0.001]], ["max", ["value", 0.1]], ["step", ["value", 0.001]]], []]]], ["p", [], ["Next we’ll see how different kernel functions affect the estimate.\n  "]]]], ["Step", [], [["p", [], ["\n    The concept of weighting the distances of our observations from a particular point, ", ["equation", [["latex", ["value", "x"]]], []], ",\n    can be expressed mathematically as follows:"]], ["equation", [["display", ["value", true]]], ["\\hat{f}(x) =  \\sum_{observations}^{}{K(\\frac{x - observation}{bandwidth})}"]], ["p", [], ["The variable ", ["equation", [["latex", ["value", "K"]]], []], " represents the kernel function. Using different\n    kernel functions will produce different estimates. Use the dropdown to see how changing the kernel affects the estimate."]], ["p", [], ["Kernel:\n    ", ["Select", [["value", ["variable", "kernel"]], ["options", ["expression", "[\n      {label:\"Epanechnikov\", value:\"epanechnikov\"},\n      {label: \"Normal\", value: \"normal\"},\n      {label: \"Uniform\", value: \"uniform\"},\n      {label: \"Triangular\", value: \"triangular\"}\n      ]"]]], []], ["br", [], []], "\n    Bandwidth: ", ["Dynamic", [["value", ["variable", "k"]], ["min", ["value", 0.001]], ["max", ["value", 10]], ["step", ["value", 0.001]]], []], ["br", [], []], "\n    Amplitude: ", ["Dynamic", [["value", ["variable", "amplitude"]], ["min", ["value", 0.1]], ["max", ["value", 10]], ["step", ["value", 0.1]]], []]]]]], ["Step", [], [["p", [], ["That’s all for now, thanks for reading! I’ll be making more of these\n    quick explainer posts, so if you have an idea for a concept you’d like\n    to see, ", ["link", [["url", ["value", "https://twitter.com/mathisonian"]], ["text", ["value", "reach out on twitter"]]], []], "."]], ["p", [], ["Here are a few useful links:"]], ["ul", [], [["li", [], [["p", [], [["link", [["text", ["value", "Learn more about kernel density estimation"]], ["href", ["value", "https://en.wikipedia.org/wiki/Kernel_density_estimation"]]], []], "."]]]], ["li", [], [["p", [], [["link", [["text", ["value", "Idyll: the software used to write this post"]], ["href", ["value", "https://idyll-lang.org/"]]], []], "."]]]], ["li", [], [["p", [], [["link", [["text", ["value", "A D3 + JavaScript KDE reference"]], ["href", ["value", "https://bl.ocks.org/mbostock/4341954"]]], []], "."]]]]]]]]]], ["analytics", [["google", ["value", "UA-108267630-1"]]], []]]]];
 
 },{}],"__IDYLL_COMPONENTS__":[function(require,module,exports){
 'use strict';
@@ -90467,13 +90651,16 @@ module.exports = {
 	'scroller': require('/Users/mathisonian/projects/kde/components/scroller.js'),
 	'step': require('/Users/mathisonian/projects/kde/components/step.js'),
 	'header': require('/Users/mathisonian/projects/kde/components/default/header.js'),
+	'blue': require('/Users/mathisonian/projects/kde/components/blue.js'),
 	'dynamic': require('/Users/mathisonian/projects/kde/components/default/dynamic.js'),
+	'red': require('/Users/mathisonian/projects/kde/components/red.js'),
 	'equation': require('/Users/mathisonian/projects/kde/components/default/equation.js'),
 	'select': require('/Users/mathisonian/projects/kde/components/default/select.js'),
-	'link': require('/Users/mathisonian/projects/kde/components/default/link.js')
+	'link': require('/Users/mathisonian/projects/kde/components/default/link.js'),
+	'analytics': require('/Users/mathisonian/projects/kde/components/default/analytics.js')
 };
 
-},{"/Users/mathisonian/projects/kde/components/default/dynamic.js":"/Users/mathisonian/projects/kde/components/default/dynamic.js","/Users/mathisonian/projects/kde/components/default/equation.js":"/Users/mathisonian/projects/kde/components/default/equation.js","/Users/mathisonian/projects/kde/components/default/fixed.js":"/Users/mathisonian/projects/kde/components/default/fixed.js","/Users/mathisonian/projects/kde/components/default/header.js":"/Users/mathisonian/projects/kde/components/default/header.js","/Users/mathisonian/projects/kde/components/default/link.js":"/Users/mathisonian/projects/kde/components/default/link.js","/Users/mathisonian/projects/kde/components/default/select.js":"/Users/mathisonian/projects/kde/components/default/select.js","/Users/mathisonian/projects/kde/components/default/text-container.js":"/Users/mathisonian/projects/kde/components/default/text-container.js","/Users/mathisonian/projects/kde/components/kde-visualizer.js":"/Users/mathisonian/projects/kde/components/kde-visualizer.js","/Users/mathisonian/projects/kde/components/scroller.js":"/Users/mathisonian/projects/kde/components/scroller.js","/Users/mathisonian/projects/kde/components/step.js":"/Users/mathisonian/projects/kde/components/step.js"}],"__IDYLL_DATA__":[function(require,module,exports){
+},{"/Users/mathisonian/projects/kde/components/blue.js":"/Users/mathisonian/projects/kde/components/blue.js","/Users/mathisonian/projects/kde/components/default/analytics.js":"/Users/mathisonian/projects/kde/components/default/analytics.js","/Users/mathisonian/projects/kde/components/default/dynamic.js":"/Users/mathisonian/projects/kde/components/default/dynamic.js","/Users/mathisonian/projects/kde/components/default/equation.js":"/Users/mathisonian/projects/kde/components/default/equation.js","/Users/mathisonian/projects/kde/components/default/fixed.js":"/Users/mathisonian/projects/kde/components/default/fixed.js","/Users/mathisonian/projects/kde/components/default/header.js":"/Users/mathisonian/projects/kde/components/default/header.js","/Users/mathisonian/projects/kde/components/default/link.js":"/Users/mathisonian/projects/kde/components/default/link.js","/Users/mathisonian/projects/kde/components/default/select.js":"/Users/mathisonian/projects/kde/components/default/select.js","/Users/mathisonian/projects/kde/components/default/text-container.js":"/Users/mathisonian/projects/kde/components/default/text-container.js","/Users/mathisonian/projects/kde/components/kde-visualizer.js":"/Users/mathisonian/projects/kde/components/kde-visualizer.js","/Users/mathisonian/projects/kde/components/red.js":"/Users/mathisonian/projects/kde/components/red.js","/Users/mathisonian/projects/kde/components/scroller.js":"/Users/mathisonian/projects/kde/components/scroller.js","/Users/mathisonian/projects/kde/components/step.js":"/Users/mathisonian/projects/kde/components/step.js"}],"__IDYLL_DATA__":[function(require,module,exports){
 "use strict";
 
 module.exports = {};
@@ -90481,7 +90668,7 @@ module.exports = {};
 },{}],"__IDYLL_OPTS__":[function(require,module,exports){
 "use strict";
 
-module.exports = { "ssr": false, "theme": "./theme.css", "layout": "blog" };
+module.exports = { "ssr": true, "theme": "./theme.css", "layout": "blog" };
 
 },{}],"__IDYLL_SYNTAX_HIGHLIGHT__":[function(require,module,exports){
 "use strict";

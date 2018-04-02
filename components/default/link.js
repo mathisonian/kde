@@ -6,7 +6,7 @@ class Link extends React.PureComponent {
   }
 
   render() {
-    let props = this.props;
+    let props = {...this.props};
     if (props.url) {
       props.href = props.url;
     }

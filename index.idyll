@@ -4,22 +4,23 @@
   title:"Kernel Density Estimation"
   description:"A useful statistical tool that sounds scarier than it is."
   twitterHandle:"mathisonian"
-
+  shareImageUrl:"https://mathisonian.github.io/kde/images/share.png"
+  shareImageWidth:"1280"
+  shareImageHeight:"640"
   /]
 
 [var name:"state" value:"title" /]
-
-[var name:"k" value:0.05 /]
+[var name:"bandwidth" value:0.05 /]
 [var name:"kernel" value:"epanechnikov" /]
 [var name:"amplitude" value:3.0 /]
 
 [Fixed fullWidth:true ]
-  [KDEVisualizer state:state k:k kernel:kernel amplitude:amplitude /]
+  [KDEVisualizer state:state bandwidth:bandwidth kernel:kernel amplitude:amplitude /]
 [/Fixed]
 
 
 [Scroller currentState:state]
-  [Step className:"header"]
+  [Step state:"title" className:"header"]
     [Header
       title:"Kernel Density Estimation"
       author:"Matthew Conlen"
@@ -49,24 +50,29 @@
   [/Step]
 
   [Step state:"show-estimate"]
-    The blue line shows an estimate of the underlying distribution, this is what KDE produces.
+    The [Blue]blue line[/Blue] shows an estimate of the underlying distribution, this is what KDE produces.
 
     The KDE algorithm takes a parameter, *bandwidth*, that affects how "smooth" the resulting
     curve is. Use the control below to modify bandwidth, and notice how the estimate changes.
 
-    Bandwidth: [Dynamic value:k min:0.001 max:0.1 step:0.001 /]
+    Bandwidth: [Dynamic value:bandwidth min:0.001 max:0.1 step:0.001 /]
   [/Step]
   [Step state:"build-estimate"]
     The KDE is calculated by weighting the distances of all the data points we've seen
-    for each location on the blue line. If we've seen more points nearby, the blue line is
+    for each location on the [Blue]blue line[/Blue]. If we've seen more points nearby, the estimate is
     higher, indicating that probability of seeing a point at that location.
 
     Move your mouse over the graphic to see how the data points contribute to the estimation —
     the "brighter" a selection is, the more likely that location is.
-    The red curve indicates how the point distances are weighted, and is called the *kernel function*.
+    The [Red]red curve[/Red] indicates how the point distances are weighted, and is called the *kernel function*. The points are colored according to this function.
+
+    *Click to lock the kernel function to a particular location.*
+  [/Step]
+  [Step]
+    Changing the bandwidth changes the shape of the kernel: a lower bandwidth means only points very close to the current position are given any weight, which leads to the [Blue]estimate[/Blue] looking squiggly; a higher bandwidth means a shallow kernel where distant points can contribute.
 
 
-    Bandwidth: [Dynamic value:k min:0.001 max:0.1 step:0.001 /]
+    Bandwidth: [Dynamic value:bandwidth min:0.001 max:0.1 step:0.001 /]
 
     Next we'll see how different kernel functions affect the estimate.
   [/Step]
@@ -83,14 +89,14 @@
 
 
     Kernel:
-    [Select value:kernal options:`[
+    [Select value:kernel options:`[
       {label:"Epanechnikov", value:"epanechnikov"},
       {label: "Normal", value: "normal"},
       {label: "Uniform", value: "uniform"},
       {label: "Triangular", value: "triangular"}
       ]` /]
     [br/]
-    Bandwidth: [Dynamic value:k min:0.001 max:10 step:0.001 /]
+    Bandwidth: [Dynamic value:bandwidth min:0.001 max:10 step:0.001 /]
     [br/]
     Amplitude: [Dynamic value:amplitude min:0.1 max:10.0 step:0.1 /]
 
@@ -104,9 +110,12 @@
     Here are a few useful links:
 
     [ul]
-      [li][link text:"Learn more about kernal density estimation" href:"https://en.wikipedia.org/wiki/Kernel_density_estimation" /].[/li]
+      [li][link text:"Learn more about kernel density estimation" href:"https://en.wikipedia.org/wiki/Kernel_density_estimation" /].[/li]
       [li][link text:"Idyll: the software used to write this post" href:"https://idyll-lang.org/" /].[/li]
       [li][link text:"A D3 + JavaScript KDE reference" href:"https://bl.ocks.org/mbostock/4341954" /].[/li]
     [/ul]
   [/Step]
 [/Scroller]
+
+
+[analytics google:"UA-108267630-1" /]

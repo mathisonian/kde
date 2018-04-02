@@ -9,9 +9,12 @@ const { linear } = require('curve-store/lib/samplers');
 var gaussian = require('gaussian');
 var distribution = gaussian(0, 1);
 
+const BLUE = '#090C9B';
+const RED = '#B02E0C';
+
 // const width = 1200;
 // const height = 400;
-let r = 10;
+let r = 30;
 
 const store = createStore({
   y: linear('y')
@@ -86,11 +89,14 @@ class CustomD3Component extends D3Component {
     const x = this.x = d3.scaleLinear().range([r, width - r]);
     const y = this.y = d3.scaleLinear().range([r, height - r]);
     this.estimateY = d3.scaleLinear().domain([0, 10]).range([height - 2 * r, 2 * r]);
-    this.kernalScale = d3.scaleLinear().domain([0, 20]).range([height - 2 * r, 2 * r])
+    this.kernelScale = d3.scaleLinear().domain([0, 20]).range([height - 2 * r, 2 * r])
     this.distanceScale = d3.scaleLinear().domain([0, 10]).range(['#222', '#fff'])
     this.indicatorScale = d3.scaleSqrt().domain([0, 15]).range([3, 7])
 
     r = width / 100 / 2 - 2;
+    if (width < 800) {
+      r *= 3;
+    }
 
     let svg = this.svg = d3.select(node).append('svg');
     this.fullSVG = svg;
@@ -107,15 +113,15 @@ class CustomD3Component extends D3Component {
     const cGroup = svg.append('g');
     this.estimateGroup = svg.append('g');
     this.estimatePath = this.estimateGroup.append('path').attr('stroke', 'green').style('fill', 'rgba(0, 0, 0, 0)');
-    this.estimateIndicator = this.estimateGroup.append('circle').style('fill', 'blue').attr('r', 0);
-    this.estimateIndicatorLine = this.estimateGroup.append('line').style('stroke', 'blue').attr('stroke-dasharray', '5, 5').attr('x1', 0).attr('x2', 0).attr('y1', 0).attr('y1', 0);
-    this.kernalPath = svg.append('g').append('path').attr('stroke', 'red')
+    this.estimateIndicator = this.estimateGroup.append('circle').style('fill', BLUE).attr('r', 0);
+    this.estimateIndicatorLine = this.estimateGroup.append('line').style('stroke', BLUE).attr('stroke-dasharray', '5, 5').style('stroke-width', 3).attr('x1', 0).attr('x2', 0).attr('y1', 0).attr('y1', 0);
+    this.kernelPath = svg.append('g').append('path').attr('stroke', RED).style('stroke-width', 2)
     svg = this.svg = cGroup;
-    this.pointMaker = svg.append('circle').attr('r', r + 3).attr('cx', x(0.5)).attr('cy', y(0.5)).style('opacity', 0).style('fill', '#e9e9e9');
+    this.pointMaker = svg.append('circle').attr('r', r + 3).attr('cx', x(0.5)).attr('cy', y(0.5)).style('opacity', 0).style('fill', '#e9e9e9')
 
-    this.setKernal(this.props.kernal);
-    this.kernal = this.kernalFunc(this.props.k);
-    this.estimator = this.kernelDensityEstimator(this.kernal, x.ticks(40));
+    this.setKernel(this.props.kernel);
+    this.kernel = this.kernelFunc(this.props.k);
+    this.estimator = this.kernelDensityEstimator(this.kernel, x.ticks(40));
     this.density = [];
 
     d3.range(350).map(() => this.addPoint(true));
@@ -215,32 +221,32 @@ class CustomD3Component extends D3Component {
   }
 
   showCircleDistance(x) {
-    const { kernal, distanceScale } = this;
+    const { kernel, distanceScale } = this;
     const { k } = this.props;
 
     requestAnimationFrame(() => {
       circles.forEach((c) => {
         c.style('fill',
-          distanceScale(kernal((x - +c.attr('nx'))))
+          distanceScale(kernel((x - +c.attr('nx'))))
         );
       })
-      this.circleFill = (c) => () => distanceScale(kernal((x - +c.attr('nx'))));
+      this.circleFill = (c) => () => distanceScale(kernel((x - +c.attr('nx'))));
     })
   }
 
-  drawKernal(nx) {
-    const { x, kernalScale, kernal, kernalPath, kernalGroup, k } = this;
+  drawKernel(nx) {
+    const { x, kernelScale, kernel, kernelPath, kernelGroup, k } = this;
     const points = [];
     d3.range(-0.15, .15, 0.001).map((d) => {
       points.push(d);
-      // kernalGroup.append('circle')
+      // kernelGroup.append('circle')
       //   .attr('cx', x(nx + d))
-      //   .attr('cy', kernalScale(kernal(d)))
+      //   .attr('cy', kernelScale(kernel(d)))
       //   .attr('fill', 'red')
       //   .attr('r', 2);
     })
 
-    kernalPath
+    kernelPath
       .datum(points)
       .attr("stroke-linejoin", "round")
       .attr('fill', 'none')
@@ -251,12 +257,13 @@ class CustomD3Component extends D3Component {
             return x(nx + d);
           })
           .y(function(d) {
-            return kernalScale(kernal(d));
+            return kernelScale(kernel(d));
           })
         )
   }
 
   updateEstimateLine(nx) {
+    const { x, estimateY, indicatorScale } = this;
     const sy = store.sample(nx).y;
     this.estimateIndicator.attr('r', indicatorScale(sy)).attr('cx', x(nx)).attr('cy', estimateY(sy));
     this.estimateIndicatorLine
@@ -296,7 +303,7 @@ class CustomD3Component extends D3Component {
         // this.showCircleDistance(0.8);
         const nx = this.nx = 0.8;
         this.showCircleDistance(nx);
-        this.drawKernal(nx);
+        this.drawKernel(nx);
         this.updateEstimateLine(nx)
         this.fullSVG.on('mousemove', () => {
           if (this.fixPosition) {
@@ -304,7 +311,7 @@ class CustomD3Component extends D3Component {
           }
           const nx = this.nx = x.invert(d3.event.pageX);
           this.showCircleDistance(nx);
-          this.drawKernal(nx);
+          this.drawKernel(nx);
           this.updateEstimateLine(nx);
         })
         // this.estimatePath.on('mousemove', () => {
@@ -325,31 +332,31 @@ class CustomD3Component extends D3Component {
     }
   }
 
-  setKernal(kernal) {
-    switch(kernal) {
+  setKernel(kernel) {
+    switch(kernel) {
       case "epanechnikov":
-        this.kernalFunc = this.kernelEpanechnikov
+        this.kernelFunc = this.kernelEpanechnikov
         this.estimateY.domain([0, 2 * 10 / this.props.amplitude]);
-        this.kernalScale.domain([0, 10 * 10 / this.props.amplitude]);
+        this.kernelScale.domain([0, 10 * 10 / this.props.amplitude]);
         this.distanceScale.domain([0, 15]);
         break;
       case "uniform":
 
-        this.kernalFunc = this.kernelUniform
+        this.kernelFunc = this.kernelUniform
         this.estimateY.domain([0, 1 / this.props.amplitude]);
-        this.kernalScale.domain([0, 10 / this.props.amplitude]);
+        this.kernelScale.domain([0, 10 / this.props.amplitude]);
         this.distanceScale.domain([0, 0.33]);
         break;
       case "triangular":
-        this.kernalFunc = this.kernelTriangular
+        this.kernelFunc = this.kernelTriangular
         this.estimateY.domain([0, 1 / this.props.amplitude]);
-        this.kernalScale.domain([0, 10 / this.props.amplitude]);
+        this.kernelScale.domain([0, 10 / this.props.amplitude]);
         this.distanceScale.domain([0, 0.33]);
         break;
       case "normal":
-        this.kernalFunc = this.kernelGaussian
+        this.kernelFunc = this.kernelGaussian
         this.estimateY.domain([0, 1 / this.props.amplitude]);
-        this.kernalScale.domain([0, 10 / this.props.amplitude]);
+        this.kernelScale.domain([0, 10 / this.props.amplitude]);
         this.distanceScale.domain([0, 0.33]);
         break;
       default:
@@ -359,17 +366,17 @@ class CustomD3Component extends D3Component {
 
   update(props) {
     const { svg, x, y, estimateY, estimatePath } = this;
-    console.log(props.kernal)
-    if (this.props.kernal !== props.kernal || this.props.amplitude !== props.amplitude) {
-      console.log('updating kernal');
-      this.setKernal(props.kernal);
+    console.log(props.kernel)
+    if (this.props.kernel !== props.kernel || this.props.amplitude !== props.amplitude) {
+      console.log('updating kernel');
+      this.setKernel(props.kernel);
     }
-    if (this.props.k !== props.k || this.props.kernal !== props.kernal || this.props.amplitude !== props.amplitude) {
-      this.kernal = this.kernalFunc(props.k);
-      this.estimator = this.kernelDensityEstimator(this.kernal, x.ticks(100));
+    if (this.props.k !== props.k || this.props.kernel !== props.kernel || this.props.amplitude !== props.amplitude) {
+      this.kernel = this.kernelFunc(props.k);
+      this.estimator = this.kernelDensityEstimator(this.kernel, x.ticks(100));
       console.log(points);
       this.density = this.estimator(points);
-      this.drawKernal(this.nx);
+      this.drawKernel(this.nx);
       if (props.state === 'build-estimate') {
         this.showCircleDistance(this.nx);
       }
@@ -389,6 +396,8 @@ class CustomD3Component extends D3Component {
                 store.set(d[0], { y: d[1] });
                 return estimateY(d[1]);
               }));
+
+      this.updateEstimateLine(this.nx);
     } else if (props.state !== this.props.state) {
       this.setStatus(props.state, this.props.state);
     }

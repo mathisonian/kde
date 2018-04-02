@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "idyll index.idyll --no-ssr=true --defaultComponents=components/default --css styles.css --theme ./theme.css --watch",
-    "build": "idyll index.idyll --defaultComponents=components/default --theme github --css styles.css; cp -r {images,fonts} build/;",
+    "start": "idyll index.idyll --defaultComponents=components/default --css styles.css --theme ./theme.css --watch",
+    "build": "idyll index.idyll --no-minify=true --defaultComponents=components/default --theme ./theme.css --css styles.css; cp -r {images,fonts} build/;",
     "deploy": "npm run build && gh-pages -d ./build"
   },
   "dependencies": {

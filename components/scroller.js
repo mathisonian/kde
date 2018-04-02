@@ -2,8 +2,6 @@ const React = require('react');
 const { filterChildren } = require('idyll-component-children');
 const d3 = require('d3');
 
-require('intersection-observer');
-const scrollama = require('scrollama');
 
 const SCROLL_STEP_MAP = {};
 const SCROLL_NAME_MAP = {};
@@ -64,6 +62,8 @@ class Scroller extends React.Component {
 
 
   componentDidMount() {
+    require('intersection-observer');
+    const scrollama = require('scrollama');
     // instantiate the scrollama
     const scroller = scrollama();
     this.handleResize();
