@@ -88,8 +88,8 @@ class CustomD3Component extends D3Component {
     const height = this.height = window.innerHeight;
     const x = this.x = d3.scaleLinear().range([r, width - r]);
     const y = this.y = d3.scaleLinear().range([r, height - r]);
-    this.estimateY = d3.scaleLinear().domain([0, 10]).range([height - 2 * r, 2 * r]);
-    this.kernelScale = d3.scaleLinear().domain([0, 20]).range([height - 2 * r, 2 * r])
+    this.estimateY = d3.scaleLinear().domain([0, 10]).range([height - r, r]);
+    this.kernelScale = d3.scaleLinear().domain([0, 20]).range([height - r, r])
     this.distanceScale = d3.scaleLinear().domain([0, 10]).range(['#222', '#fff'])
     this.indicatorScale = d3.scaleSqrt().domain([0, 15]).range([3, 7])
 

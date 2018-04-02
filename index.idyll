@@ -42,7 +42,7 @@
   [/Step]
 
   [Step state:"show-generator"]
-    To understand how KDE is used in practice, let's start with some points. The white circles on
+    To understand how KDE is used in practice, lets start with some points. The white circles on
     your screen were sampled from some unknown distribution.
 
     As more points build up, their silhouette will roughly correspond to that distribution, however
