@@ -1,0 +1,62 @@
+
+body {
+  background:black;
+}
+.idyll-text-container {
+  /* background: white; */
+  padding: 20px;
+}
+
+.idyll-root {
+  padding-top: 0;
+}
+@media (max-width: 1000px) {
+  .idyll-root {
+      width: 100vw;
+      margin: 0 auto;
+      max-width: none;
+      padding-bottom: 80vh;
+  }
+}
+
+.idyll-scroll-step {
+  background: rgba(255, 255, 255, 0.98);
+  padding: 0 30px 30px 30px;
+  border: solid 1px black;
+  pointer-events: all;
+}
+
+.idyll-scroll-step.header {
+  background: none;
+  padding: 0;
+  border: none;
+}
+
+.fixed {
+  width: 100%;
+  right: 0;
+  bottom: 0;
+}
+
+.article-header {
+  color: white;
+  font-family: 'Helvetica' sans-serif;
+}
+
+.article-header a {
+  color: white;
+}
+.article-header .byline {
+  color: white;
+  font-family: 'Helvetica' sans-serif;
+}
+
+.idyll-dynamic {
+  cursor: ew-resize;
+  text-decoration: underline;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.idyll-text-container {
+  pointer-events: none;
+}

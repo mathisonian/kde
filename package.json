@@ -1,0 +1,24 @@
+{
+  "name": "kde",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "start": "idyll index.idyll --no-ssr=true --defaultComponents=components/default --css styles.css --theme ./theme.css --watch",
+    "build": "idyll index.idyll --defaultComponents=components/default --theme github --css styles.css; cp -r {images,fonts} build/;",
+    "deploy": "npm run build && gh-pages -d ./build"
+  },
+  "dependencies": {
+    "curve-store": "^1.1.2",
+    "d3": "^4.13.0",
+    "gaussian": "^1.1.0",
+    "idyll": "^2.0.0",
+    "idyll-component-children": "^1.0.1",
+    "idyll-d3-component": "^2.0.0",
+    "intersection-observer": "^0.5.0",
+    "react-latex-patched": "^1.1.1",
+    "scrollama": "^1.4.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^0.12.0"
+  }
+}

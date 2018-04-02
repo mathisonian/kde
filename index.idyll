@@ -1,0 +1,112 @@
+
+
+[meta
+  title:"Kernel Density Estimation"
+  description:"A useful statistical tool that sounds scarier than it is."
+  twitterHandle:"mathisonian"
+
+  /]
+
+[var name:"state" value:"title" /]
+
+[var name:"k" value:0.05 /]
+[var name:"kernel" value:"epanechnikov" /]
+[var name:"amplitude" value:3.0 /]
+
+[Fixed fullWidth:true ]
+  [KDEVisualizer state:state k:k kernel:kernel amplitude:amplitude /]
+[/Fixed]
+
+
+[Scroller currentState:state]
+  [Step className:"header"]
+    [Header
+      title:"Kernel Density Estimation"
+      author:"Matthew Conlen"
+      authorLink:"https://mathisonian.com" /]
+  [/Step]
+  [Step state:"start-drop"]
+    Kernel density estimation is a really useful statistical tool
+    with an intimidating name.
+    Often shortened to **KDE**, it's a technique
+    that let's you create a smooth curve given a set of data.
+
+    This can be useful if you want to visualize just the
+    "shape" of some data, as a kind of continuous replacement for the discrete histogram.
+    It can also be used to generate points that
+    *look like they came from a certain dataset* - this behavior can power simple
+    simulations, where simulated objects are modeled off of real data.
+
+    I hope this article provides some intuition for how KDE works.
+  [/Step]
+
+  [Step state:"show-generator"]
+    To understand how KDE is used in practice, let's start with some points. The white circles on
+    your screen were sampled from some unknown distribution.
+
+    As more points build up, their silhouette will roughly correspond to that distribution, however
+    we have no way of knowing its true value.
+  [/Step]
+
+  [Step state:"show-estimate"]
+    The blue line shows an estimate of the underlying distribution, this is what KDE produces.
+
+    The KDE algorithm takes a parameter, *bandwidth*, that affects how "smooth" the resulting
+    curve is. Use the control below to modify bandwidth, and notice how the estimate changes.
+
+    Bandwidth: [Dynamic value:k min:0.001 max:0.1 step:0.001 /]
+  [/Step]
+  [Step state:"build-estimate"]
+    The KDE is calculated by weighting the distances of all the data points we've seen
+    for each location on the blue line. If we've seen more points nearby, the blue line is
+    higher, indicating that probability of seeing a point at that location.
+
+    Move your mouse over the graphic to see how the data points contribute to the estimation —
+    the "brighter" a selection is, the more likely that location is.
+    The red curve indicates how the point distances are weighted, and is called the *kernel function*.
+
+
+    Bandwidth: [Dynamic value:k min:0.001 max:0.1 step:0.001 /]
+
+    Next we'll see how different kernel functions affect the estimate.
+  [/Step]
+  [Step]
+    The concept of weighting the distances of our observations from a particular point, [equation latex:"x" /],
+    can be expressed mathematically as follows:
+
+    [equation display:true]
+      \hat{f}(x) =  \sum_{observations}^{}{K(\frac{x - observation}{bandwidth})}
+    [/equation]
+
+    The variable [equation latex:"K" /] represents the kernel function. Using different
+    kernel functions will produce different estimates. Use the dropdown to see how changing the kernel affects the estimate.
+
+
+    Kernel:
+    [Select value:kernal options:`[
+      {label:"Epanechnikov", value:"epanechnikov"},
+      {label: "Normal", value: "normal"},
+      {label: "Uniform", value: "uniform"},
+      {label: "Triangular", value: "triangular"}
+      ]` /]
+    [br/]
+    Bandwidth: [Dynamic value:k min:0.001 max:10 step:0.001 /]
+    [br/]
+    Amplitude: [Dynamic value:amplitude min:0.1 max:10.0 step:0.1 /]
+
+  [/Step]
+  [Step]
+
+    That's all for now, thanks for reading! I'll be making more of these
+    quick explainer posts, so if you have an idea for a concept you'd like
+    to see, [link url:"https://twitter.com/mathisonian" text:"reach out on twitter"/].
+
+    Here are a few useful links:
+
+    [ul]
+      [li][link text:"Learn more about kernal density estimation" href:"https://en.wikipedia.org/wiki/Kernel_density_estimation" /].[/li]
+      [li][link text:"Idyll: the software used to write this post" href:"https://idyll-lang.org/" /].[/li]
+      [li][link text:"A D3 + JavaScript KDE reference" href:"https://bl.ocks.org/mbostock/4341954" /].[/li]
+    [/ul]
+  [/Step]
+[/Scroller]
