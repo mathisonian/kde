@@ -38,8 +38,14 @@ class CustomD3Component extends D3Component {
 
     kernelDensityEstimator(kernel, X) {
       return function(V) {
+        console.log('estimating density', X, V);
+        console.log(this.kernel);
         return X.map(function(x) {
-          return [x, d3.mean(V, function(v) { return kernel(x - v); })];
+          // d3.mean(V, function(v) {
+          //   console.log(x, v, Math.abs(x - v), kernel(Math.abs(x - v)));
+          //   return kernel(Math.abs(x - v));
+          // });
+          return [x, d3.mean(V, function(v) { return kernel(Math.abs(x - v)); })];
         });
       };
     }
@@ -74,7 +80,7 @@ class CustomD3Component extends D3Component {
 
     kernelEpanechnikov(k) {
       return function(v) {
-        return Math.abs(v /= k) <= 1 ? 0.75 * (1 - v * v) / k : 0;
+        return Math.abs(v / k) <= 1 ? 0.75 * (1 - v * v) / k : 0;
       };
     }
 
@@ -90,6 +96,8 @@ class CustomD3Component extends D3Component {
     const y = this.y = d3.scaleLinear().range([r, height - r]);
     this.estimateY = d3.scaleLinear().domain([0, 10]).range([height - r, r]);
     this.kernelScale = d3.scaleLinear().domain([0, 20]).range([height - r, r])
+
+
     this.distanceScale = d3.scaleLinear().domain([0, 10]).range(['#222', '#fff'])
     this.indicatorScale = d3.scaleSqrt().domain([0, 15]).range([3, 7])
 
@@ -120,8 +128,8 @@ class CustomD3Component extends D3Component {
     this.pointMaker = svg.append('circle').attr('r', r + 3).attr('cx', x(0.5)).attr('cy', y(0.5)).style('opacity', 0).style('fill', '#e9e9e9')
 
     this.setKernel(this.props.kernel);
-    this.kernel = this.kernelFunc(this.props.k);
-    this.estimator = this.kernelDensityEstimator(this.kernel, x.ticks(40));
+    this.kernel = this.kernelFunc(this.props.bandwidth);
+    this.estimator = this.kernelDensityEstimator(this.kernel, x.ticks(100));
     this.density = [];
 
     d3.range(350).map(() => this.addPoint(true));
@@ -201,6 +209,7 @@ class CustomD3Component extends D3Component {
       // if (!this.density.length) {
         this.density = this.estimator(points);
       // }
+      console.log(this.density);
       store.clear();
       estimatePath
           .datum(this.density)
@@ -222,7 +231,7 @@ class CustomD3Component extends D3Component {
 
   showCircleDistance(x) {
     const { kernel, distanceScale } = this;
-    const { k } = this.props;
+    const { bandwidth } = this.props;
 
     requestAnimationFrame(() => {
       circles.forEach((c) => {
@@ -235,7 +244,7 @@ class CustomD3Component extends D3Component {
   }
 
   drawKernel(nx) {
-    const { x, kernelScale, kernel, kernelPath, kernelGroup, k } = this;
+    const { x, kernelScale, kernel, kernelPath, kernelGroup, bandwidth } = this;
     const points = [];
     d3.range(-0.15, .15, 0.001).map((d) => {
       points.push(d);
@@ -333,6 +342,7 @@ class CustomD3Component extends D3Component {
   }
 
   setKernel(kernel) {
+    console.log('setting kernal ', kernel);
     switch(kernel) {
       case "epanechnikov":
         this.kernelFunc = this.kernelEpanechnikov
@@ -341,7 +351,6 @@ class CustomD3Component extends D3Component {
         this.distanceScale.domain([0, 15]);
         break;
       case "uniform":
-
         this.kernelFunc = this.kernelUniform
         this.estimateY.domain([0, 1 / this.props.amplitude]);
         this.kernelScale.domain([0, 10 / this.props.amplitude]);
@@ -367,12 +376,12 @@ class CustomD3Component extends D3Component {
   update(props) {
     const { svg, x, y, estimateY, estimatePath } = this;
     console.log(props.kernel)
-    if (this.props.kernel !== props.kernel || this.props.amplitude !== props.amplitude) {
+    if (this.props.bandwidth !== props.bandwidth || this.props.kernel !== props.kernel || this.props.amplitude !== props.amplitude) {
       console.log('updating kernel');
       this.setKernel(props.kernel);
     }
-    if (this.props.k !== props.k || this.props.kernel !== props.kernel || this.props.amplitude !== props.amplitude) {
-      this.kernel = this.kernelFunc(props.k);
+    if (this.props.bandwidth !== props.bandwidth || this.props.kernel !== props.kernel || this.props.amplitude !== props.amplitude) {
+      this.kernel = this.kernelFunc(props.bandwidth);
       this.estimator = this.kernelDensityEstimator(this.kernel, x.ticks(100));
       console.log(points);
       this.density = this.estimator(points);

@@ -18,6 +18,7 @@
   [KDEVisualizer state:state bandwidth:bandwidth kernel:kernel amplitude:amplitude /]
 [/Fixed]
 
+[TextContainer]
 
 [Scroller currentState:state]
   [Step state:"title" className:"header"]
@@ -117,5 +118,6 @@
   [/Step]
 [/Scroller]
 
+[/TextContainer]
 
 [analytics google:"UA-108267630-1" /]
