@@ -5,16 +5,18 @@
   "scripts": {
     "start": "idyll index.idyll --defaultComponents=components/default --css styles.css --theme ./theme.css --watch",
     "build": "idyll index.idyll --no-minify=true --defaultComponents=components/default --theme ./theme.css --css styles.css; cp -r {images,fonts} build/;",
-    "deploy": "npm run build && gh-pages -d ./build"
+    "deploy": "gh-pages -d ./build"
   },
   "idyll": {
     "css": "styles.css",
-    "theme": "./theme.css"
+    "theme": "./theme.css",
+    "context": "./analytics/context"
   },
   "dependencies": {
     "curve-store": "^1.1.2",
     "d3": "^4.13.0",
     "gaussian": "^1.1.0",
+    "firebase": "^5.4.0",
     "idyll": "^3.12.0",
     "idyll-component-children": "^1.0.1",
     "idyll-d3-component": "^2.0.0",

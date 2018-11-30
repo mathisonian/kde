@@ -423,3 +423,7 @@ body {
 li p {
   margin-top: 0;
 }
+
+.fixed {
+  background: black;
+}

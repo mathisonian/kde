@@ -25,7 +25,7 @@
     [Header
       title:"Kernel Density Estimation"
       author:"Matthew Conlen"
-      authorLink:"https://mathisonian.com" /]
+      authorLink:"https://twitter.com/mathisonian" /]
   [/Step]
   [Step state:"start-drop"]
     Kernel density estimation is a really useful statistical tool
@@ -111,8 +111,9 @@
     Here are a few useful links:
 
     [ul]
-      [li][link text:"Learn more about kernel density estimation" href:"https://en.wikipedia.org/wiki/Kernel_density_estimation" /].[/li]
       [li][link text:"Idyll: the software used to write this post" href:"https://idyll-lang.org/" /].[/li]
+      [li][link text:"The source code for this post" href:"https://github.com/mathisonian/kde/" /].[/li]
+      [li][link text:"Learn more about kernel density estimation" href:"https://en.wikipedia.org/wiki/Kernel_density_estimation" /].[/li]
       [li][link text:"A D3 + JavaScript KDE reference" href:"https://bl.ocks.org/mbostock/4341954" /].[/li]
     [/ul]
   [/Step]

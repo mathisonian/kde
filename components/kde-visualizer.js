@@ -14,11 +14,13 @@ const RED = '#B02E0C';
 
 // const width = 1200;
 // const height = 400;
-let r = 30;
+let r = 10;
 
 const store = createStore({
   y: linear('y')
 });
+store.set(0, { y: 0 })
+store.set(1, { y: 0 })
 
 const pointCount = {};
 const points = [];
@@ -37,15 +39,15 @@ const randomPrecision = (prec) => {
 class CustomD3Component extends D3Component {
 
     kernelDensityEstimator(kernel, X) {
+      // console.log(kernel, X);
+      // console.log('ticks', X);
       return function(V) {
-        console.log('estimating density', X, V);
-        console.log(this.kernel);
         return X.map(function(x) {
-          // d3.mean(V, function(v) {
-          //   console.log(x, v, Math.abs(x - v), kernel(Math.abs(x - v)));
-          //   return kernel(Math.abs(x - v));
-          // });
-          return [x, d3.mean(V, function(v) { return kernel(Math.abs(x - v)); })];
+          // console.log('mean', d3.mean(V, function(v) {
+            // console.log(x, v, kernel(x - v));
+            // return kernel(x - v);
+          // }))
+          return [x, d3.mean(V, function(v) { return kernel(x - v); })];
         });
       };
     }
@@ -80,31 +82,39 @@ class CustomD3Component extends D3Component {
 
     kernelEpanechnikov(k) {
       return function(v) {
-        return Math.abs(v / k) <= 1 ? 0.75 * (1 - v * v) / k : 0;
+        return Math.abs(v /= k) <= 1 ? 0.75 * (1 - v * v) / k : 0;
       };
     }
 
   initialize(node, props) {
+    // window.onbeforeunload = function () {
+    // }
+    window.scrollTo(0, 0);
+
     this.fixPosition = false;
 
     this.showEstimate = false;
     this.repeat = 1000;
 
+    this.nx = 0.8;
+    this.hasShownEstimate = false;
+
     const width = this.width = window.innerWidth;
     const height = this.height = window.innerHeight;
     const x = this.x = d3.scaleLinear().range([r, width - r]);
     const y = this.y = d3.scaleLinear().range([r, height - r]);
-    this.estimateY = d3.scaleLinear().domain([0, 10]).range([height - r, r]);
-    this.kernelScale = d3.scaleLinear().domain([0, 20]).range([height - r, r])
 
+    this.estimateY = d3.scaleLinear().domain([0, 10]).range([height - 2 * r, 2 * r]);
+    this.kernelScale = d3.scaleLinear().domain([0, 20]).range([height - 2 * r, 2 * r])
+    // this.estimateY = d3.scaleLinear().domain([0, 10]).range([height - r, r]);
+    // this.kernelScale = d3.scaleLinear().domain([0, 20]).range([height - r, r])
 
     this.distanceScale = d3.scaleLinear().domain([0, 10]).range(['#222', '#fff'])
     this.indicatorScale = d3.scaleSqrt().domain([0, 15]).range([3, 7])
 
+    console.log(this.estimateY.range())
+
     r = width / 100 / 2 - 2;
-    if (width < 800) {
-      r *= 3;
-    }
 
     let svg = this.svg = d3.select(node).append('svg');
     this.fullSVG = svg;
@@ -129,10 +139,12 @@ class CustomD3Component extends D3Component {
 
     this.setKernel(this.props.kernel);
     this.kernel = this.kernelFunc(this.props.bandwidth);
-    this.estimator = this.kernelDensityEstimator(this.kernel, x.ticks(100));
+    this.estimator = this.kernelDensityEstimator(this.kernel, x.ticks(40));
     this.density = [];
 
     d3.range(350).map(() => this.addPoint(true));
+
+    // this.setStatus('title');
     // this.addPoint(false);
     // setTimeout(() => this.addPoint(false), 1000);
   }
@@ -205,11 +217,10 @@ class CustomD3Component extends D3Component {
       });
 
 
+    this.density = this.estimator(points);
     if (this.showEstimate) {
       // if (!this.density.length) {
-        this.density = this.estimator(points);
       // }
-      console.log(this.density);
       store.clear();
       estimatePath
           .datum(this.density)
@@ -231,7 +242,7 @@ class CustomD3Component extends D3Component {
 
   showCircleDistance(x) {
     const { kernel, distanceScale } = this;
-    const { bandwidth } = this.props;
+    const { k } = this.props;
 
     requestAnimationFrame(() => {
       circles.forEach((c) => {
@@ -244,7 +255,7 @@ class CustomD3Component extends D3Component {
   }
 
   drawKernel(nx) {
-    const { x, kernelScale, kernel, kernelPath, kernelGroup, bandwidth } = this;
+    const { x, kernelScale, kernel, kernelPath, kernelGroup, k } = this;
     const points = [];
     d3.range(-0.15, .15, 0.001).map((d) => {
       points.push(d);
@@ -262,7 +273,6 @@ class CustomD3Component extends D3Component {
       .attr("d",  d3.line()
           // .curve(d3.curveBasis)
           .x(function(d) {
-            // console.log(d);
             return x(nx + d);
           })
           .y(function(d) {
@@ -272,6 +282,8 @@ class CustomD3Component extends D3Component {
   }
 
   updateEstimateLine(nx) {
+
+    console.log('updating estimate line');
     const { x, estimateY, indicatorScale } = this;
     const sy = store.sample(nx).y;
     this.estimateIndicator.attr('r', indicatorScale(sy)).attr('cx', x(nx)).attr('cy', estimateY(sy));
@@ -284,10 +296,11 @@ class CustomD3Component extends D3Component {
   }
 
   setStatus(newStatus, lastStatus) {
-    const { svg, x, y, pointMaker, estimateY, estimatePath, indicatorScale } = this;
+    const { svg, x, y, pointMaker, estimateY, estimatePath, indicatorScale, estimateIndicatorLine } = this;
     console.log('setting status: ', newStatus, lastStatus);
     switch(newStatus) {
       case 'title':
+        this.repeat = 5000;
         break;
       case 'start-drop':
         this.repeat = 500;
@@ -301,6 +314,7 @@ class CustomD3Component extends D3Component {
       case 'show-estimate':
         pointMaker.style('opacity', 1)
         this.repeat = 100;
+        this.hasShownEstimate = true;
         this.showEstimate = true;
         break;
       case 'build-estimate':
@@ -342,7 +356,7 @@ class CustomD3Component extends D3Component {
   }
 
   setKernel(kernel) {
-    console.log('setting kernal ', kernel);
+    console.log('SETTING K ', kernel);
     switch(kernel) {
       case "epanechnikov":
         this.kernelFunc = this.kernelEpanechnikov
@@ -376,38 +390,44 @@ class CustomD3Component extends D3Component {
   update(props) {
     const { svg, x, y, estimateY, estimatePath } = this;
     console.log(props.kernel)
-    if (this.props.bandwidth !== props.bandwidth || this.props.kernel !== props.kernel || this.props.amplitude !== props.amplitude) {
+    if (this.props.kernel !== props.kernel || this.props.amplitude !== props.amplitude) {
       console.log('updating kernel');
       this.setKernel(props.kernel);
     }
-    if (this.props.bandwidth !== props.bandwidth || this.props.kernel !== props.kernel || this.props.amplitude !== props.amplitude) {
+    if (this.props.bandwidth !== props.bandwidth || this.props.kernel !== props.kernel || this.props.amplitude !== props.amplitude || this.props.state !== props.state) {
+      console.log('props.bandwidth', props.bandwidth);
       this.kernel = this.kernelFunc(props.bandwidth);
       this.estimator = this.kernelDensityEstimator(this.kernel, x.ticks(100));
-      console.log(points);
+      // console.log(points);
       this.density = this.estimator(points);
-      this.drawKernel(this.nx);
       if (props.state === 'build-estimate') {
+        this.drawKernel(this.nx);
+        this.updateEstimateLine(this.nx)
         this.showCircleDistance(this.nx);
       }
       store.clear();
-      estimatePath
-          .datum(this.density)
-          .style("stroke", "#2800d7")
-          .attr("stroke-width", 3)
-          .attr("stroke-linejoin", "round")
-          .attr("d",  d3.line()
-              .curve(d3.curveBasis)
-              .x(function(d) {
-                // console.log(d);
-                return x(d[0]);
-              })
-              .y(function(d) {
-                store.set(d[0], { y: d[1] });
-                return estimateY(d[1]);
-              }));
-
-      this.updateEstimateLine(this.nx);
-    } else if (props.state !== this.props.state) {
+      // console.log(this.estimateY.range())
+      // console.log(this.density);
+      if (this.showEstimate) {
+          estimatePath
+            .datum(this.density)
+            .style("stroke", "#2800d7")
+            .attr("stroke-width", 3)
+            .attr("stroke-linejoin", "round")
+            .attr("d",  d3.line()
+                .curve(d3.curveBasis)
+                .x(function(d) {
+                  // console.log(d);
+                  return x(d[0]);
+                })
+                .y(function(d) {
+                  console.log(d[0], d[1]);
+                  store.set(d[0], { y: d[1] });
+                  return estimateY(d[1]);
+                }));
+      }
+    }
+    if (props.state !== this.props.state) {
       this.setStatus(props.state, this.props.state);
     }
   }
