@@ -1,0 +1,429 @@
+
+
+body {
+  margin: 0;
+}
+
+.idyll-root {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 60px 0;
+  margin-bottom: 60px;
+}
+
+.idyll-text-container {
+  max-width: 600px;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 50px;
+}
+
+.section {
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+.article-header {
+  width: 600px;
+  max-width: 90vw;
+  margin-bottom: 45px;
+}
+
+.inset {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+input {
+  cursor: pointer;
+}
+
+.relative {
+  position: relative;
+}
+.aside-container {
+  position: relative;
+}
+.aside {
+  position: absolute;
+  width: 300px;
+  right: calc((10vw + 600px + 150px) / -2);
+}
+
+.fixed {
+  position: fixed;
+  display: flex;
+  align-self: center;
+  flex-direction: column;
+  align-items: center;
+  right: 25px;
+  top: 0;
+  bottom: 0;
+  width: calc((80vw - 600px) - 50px);
+  justify-content: center;
+}
+
+.fixed div {
+  width: 100%;
+}
+
+.idyll-scroll-graphic {
+  position: -webkit-sticky;
+  position: sticky;
+}
+
+.idyll-scroll-graphic img {
+  max-height: 100vh;
+}
+
+.component-debug-view {
+  position: relative;
+  transition: background-color 0.3s ease-in;
+}
+
+.author-view-button {
+  position: absolute;
+  top: 3px;
+  right: 0;
+  opacity: .38;
+  background-color: #E7E3D0;
+  background-image: url('https://idyll-lang.org/static/images/quill-icon.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  box-sizing: border-box;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.author-view-button:focus {
+  outline: none;
+}
+
+.component-debug-view:hover > .author-view-button {
+  opacity: 0.87;
+  transition: opacity 600ms linear;
+}
+
+.author-component-view {
+  display: flex;
+  flex-direction: column;
+  overflow-x: scroll;
+}
+
+.author-component-view h2, .author-component-view h3 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.props-table {
+  width: 90%;
+  min-width: 500px;
+  display: table;
+  border: 1px solid #A4A2A2;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+
+.props-table-type {
+  font-family: 'Courier-New';
+}
+
+.props-table-row {
+  text-align: center;
+}
+
+.debug-collapse {
+  overflow: hidden;
+  overflow-y: scroll;
+  transition: height 0.3s ease-in;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.icon-links {
+  margin-top: 13px;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.icon-link {
+  color: inherit;
+}
+
+.icon-link:hover {
+  text-decoration: none;
+}
+
+.icon-link-image {
+  cursor: pointer;
+}
+
+.button-tooltip {
+  background-color: black !important;
+  padding: 0 5px;
+}
+
+.button-tooltip.place-top:after {
+  border-top-color: black !important;
+}
+
+.button-tooltip.place-right:after {
+  border-right-color: black !important;
+}
+
+.button-tooltip.place-bottom:after {
+  border-bottom-color: black !important;
+}
+
+.button-tooltip.place-left:after {
+  border-left-color: black !important;
+}
+
+.tooltip-header {
+  line-height: 1;
+  margin: 6px 0;
+  font-size: 18px;
+}
+
+.tooltip-subtitle {
+  font-style: italic;
+}
+
+@media all and (max-width: 1600px) {
+  .fixed {
+    width: calc((85vw - 600px) - 50px);
+  }
+}
+
+@media all and (max-width: 1000px) {
+  /* put your css styles in here */
+  .desktop {
+    display: none;
+  }
+  .relative {
+    position: static;
+  }
+  .aside {
+    position: static;
+    width: 100%;
+    right: 0;
+  }
+  .idyll-text-container {
+    max-width: calc(100% - 2em);
+    margin-top: 0;
+    margin-right: 1em;
+    margin-bottom: 0;
+    margin-left: 1em;
+  }
+  .hed {
+    width: 100%;
+  }
+
+  .idyll-root {
+    padding: 15px 0;
+  }
+
+  .idyll-root {
+    width: 90vw;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-bottom: 80vh;
+  }
+  .fixed {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    top: initial;
+    background: white;
+    padding: 20px 0;
+    border-top: solid 2px black;
+  }
+}
+
+/*! Typebase.less v0.1.0 | MIT License */
+/* Setup */
+html {
+  /* Change default typefaces here */
+  font-family: serif;
+  font-size: 137.5%;
+  -webkit-font-smoothing: antialiased;
+}
+/* Copy & Lists */
+p {
+  line-height: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+ul,
+ol {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+ul li,
+ol li {
+  line-height: 1.5rem;
+}
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+blockquote {
+  line-height: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* Change heading typefaces here */
+  font-family: sans-serif;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  line-height: 1.5rem;
+}
+h1 {
+  font-size: 4.242rem;
+  line-height: 4.5rem;
+  margin-top: 3rem;
+}
+h2 {
+  font-size: 2.828rem;
+  line-height: 3rem;
+  margin-top: 3rem;
+}
+h3 {
+  font-size: 1.414rem;
+}
+h4 {
+  font-size: 0.707rem;
+}
+h5 {
+  font-size: 0.4713333333333333rem;
+}
+h6 {
+  font-size: 0.3535rem;
+}
+/* Tables */
+table {
+  margin-top: 1.5rem;
+  border-spacing: 0px;
+  border-collapse: collapse;
+}
+table td,
+table th {
+  padding: 0;
+  line-height: 33px;
+}
+/* Code blocks */
+code {
+  vertical-align: bottom;
+}
+/* Leading paragraph text */
+.lead {
+  font-size: 1.414rem;
+}
+/* Hug the block above you */
+.hug {
+  margin-top: 0;
+}
+
+
+
+
+body {
+  background:black;
+}
+.idyll-text-container {
+  /* background: white; */
+  padding: 20px;
+}
+
+.idyll-root {
+  padding-top: 0;
+}
+@media (max-width: 1000px) {
+  .idyll-root {
+      width: 100vw;
+      margin: 0 auto;
+      max-width: none;
+      padding-bottom: 80vh;
+  }
+}
+
+@media (max-width: 800px) {
+  h1 {
+      font-size: 48px;
+      line-height: 52px;
+  }
+}
+
+.idyll-scroll-step {
+  background: rgba(255, 255, 255, 0.98);
+  padding: 0 30px 30px 30px;
+  border: solid 1px black;
+  pointer-events: all;
+}
+
+.idyll-scroll-step.header {
+  background: none;
+  padding: 0;
+  border: none;
+}
+
+.fixed {
+  width: 100%;
+  right: 0;
+  bottom: 0;
+}
+
+.article-header {
+  color: white;
+  font-family: 'Helvetica' sans-serif;
+}
+
+.article-header a {
+  color: white;
+  text-decoration: underline;
+  text-decoration-color: #090C9B;
+
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.article-header .byline {
+  color: white;
+  font-family: 'Helvetica' sans-serif;
+  margin-top: 1em;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.idyll-dynamic {
+  cursor: ew-resize;
+  text-decoration: underline;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.idyll-text-container {
+  pointer-events: none;
+}
+
+li p {
+  margin-top: 0;
+}
+
+.fixed {
+  background: black;
+}

@@ -1,36 +1,42 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-      <title>
-        Kernel Density Estimation
-      </title>
-      <meta property="og:title" content="Kernel Density Estimation">
-    <meta charset="utf-8">
-      <meta property="og:image" content="https:&#x2F;&#x2F;mathisonian.github.io&#x2F;kde&#x2F;images&#x2F;share.png">
-      <meta name="twitter:image:src" content="https:&#x2F;&#x2F;mathisonian.github.io&#x2F;kde&#x2F;images&#x2F;share.png">
-      <meta name="twitter:card" content="summary_large_image">
-      <meta property="og:image:width" content="1280">
-      <meta property="og:image:width" content="640">
-    <meta property="og:type" content="article">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0"
+    />
+    <title>Kernel Density Estimation</title>
+    <meta property="og:title" content="Kernel Density Estimation" />
+    <meta charset="utf-8" />
+    <meta property="og:image" content="https:&#x2F;&#x2F;mathisonian.github.io&#x2F;kde&#x2F;images&#x2F;share.png" />
+    <meta name="twitter:image:src" content="https:&#x2F;&#x2F;mathisonian.github.io&#x2F;kde&#x2F;images&#x2F;share.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="640" />
+    <meta property="og:type" content="article" />
 
-      <meta property="og:description" content="A useful statistical tool that sounds scarier than it is.">
-      <meta property="description" content="A useful statistical tool that sounds scarier than it is.">
-      <meta property="twitter:creator" content="mathisonian">
-    <link rel="stylesheet" href="styles.css">
+    <meta property="og:description" content="A useful statistical tool that sounds scarier than it is." />
+    <meta property="description" content="A useful statistical tool that sounds scarier than it is." />
+    <meta property="twitter:creator" content="mathisonian" />
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.9.0/katex.min.css"
+    />
+
+    <link rel="stylesheet" href="static/idyll_styles.css" />
   </head>
   <body>
-    <div id="idyll-mount"><div class="idyll-root" data-reactroot=""><div style="max-width:600px;margin-left:50px" class=" idyll-text-container"></div><div style="position:fixed" class="fixed"><div style="width:100%"></div></div><div style="max-width:600px;margin-left:50px" class=" idyll-text-container"><div id="idyll-scroll-0" style="position:relative"><div class="idyll-scroll-graphic" style="height:100vh;position:absolute;top:0;left:0;bottom:auto;width:100%;transform:translate3d(0, 0, 0);z-index:-1"><div style="width:0;position:absolute;right:1rem;top:50%;transform:translateY(-50%)"></div></div><div class="idyll-scroll-text"><div class="idyll-scroll-step header" style="margin:10vh 0 60vh 0"><div class="article-header"><h1 class="hed">Kernel Density Estimation</h1><div class="byline">By: <a href="https://mathisonian.com">Matthew Conlen</a></div></div></div><div class="idyll-scroll-step " style="margin:10vh 0 60vh 0"><p>
+    <div id="idyll-mount"><div data-reactroot=""><div class="idyll-root"><div class=" idyll-text-container"></div><div style="position:fixed" class="fixed"><div style="width:100%"></div></div><div class=" idyll-text-container"><div class=" idyll-text-container"><div id="idyll-scroll-0" style="position:relative"><div class="idyll-scroll-graphic" style="height:100vh;position:absolute;top:0;left:0;bottom:auto;width:100%;transform:translate3d(0, 0, 0);z-index:-1"><div style="width:0;position:absolute;right:1rem;top:50%;transform:translateY(-50%)"></div></div><div class="idyll-scroll-text"><div class="idyll-scroll-step header" style="margin:10vh 0 60vh 0"><div class="article-header"><h1 class="hed">Kernel Density Estimation</h1><div class="byline">By: <a href="https://twitter.com/mathisonian">Matthew Conlen</a></div></div></div><div class="idyll-scroll-step " style="margin:10vh 0 60vh 0"><p>
     Kernel density estimation is a really useful statistical tool
     with an intimidating name.
     Often shortened to <strong>KDE</strong>, it’s a technique
-    that lets you create a smooth curve given a set of data.</p><p>This can be useful if you want to visualize just the
+    that let’s you create a smooth curve given a set of data.</p><p>This can be useful if you want to visualize just the
     “shape” of some data, as a kind of continuous replacement for the discrete histogram.
     It can also be used to generate points that
     <em>look like they came from a certain dataset</em> - this behavior can power simple
     simulations, where simulated objects are modeled off of real data.</p><p>I hope this article provides some intuition for how KDE works.
   </p></div><div class="idyll-scroll-step " style="margin:10vh 0 60vh 0"><p>
-    To understand how KDE is used in practice, let’s start with some points. The white circles on
+    To understand how KDE is used in practice, lets start with some points. The white circles on
     your screen were sampled from some unknown distribution.</p><p>As more points build up, their silhouette will roughly correspond to that distribution, however
     we have no way of knowing its true value.
   </p></div><div class="idyll-scroll-step " style="margin:10vh 0 60vh 0"><p>
@@ -51,7 +57,7 @@
     Bandwidth: <span class="idyll-dynamic">0.05</span><br/>
     Amplitude: <span class="idyll-dynamic">3.00</span></p></div><div class="idyll-scroll-step " style="margin:10vh 0 60vh 0"><p>That’s all for now, thanks for reading! I’ll be making more of these
     quick explainer posts, so if you have an idea for a concept you’d like
-    to see, <a url="https://twitter.com/mathisonian" href="https://twitter.com/mathisonian">reach out on twitter</a>.</p><p>Here are a few useful links:</p><ul><li><p><a href="https://en.wikipedia.org/wiki/Kernel_density_estimation">Learn more about kernel density estimation</a>.</p></li><li><p><a href="https://idyll-lang.org/">Idyll: the software used to write this post</a>.</p></li><li><p><a href="https://bl.ocks.org/mbostock/4341954">A D3 + JavaScript KDE reference</a>.</p></li></ul></div></div></div></div></div></div>
-    <script src="index.js"></script>
+    to see, <a url="https://twitter.com/mathisonian" href="https://twitter.com/mathisonian">reach out on twitter</a>.</p><p>Here are a few useful links:</p><ul><li><p><a href="https://idyll-lang.org/">Idyll: the software used to write this post</a>.</p></li><li><p><a href="https://github.com/mathisonian/kde/">The source code for this post</a>.</p></li><li><p><a href="https://en.wikipedia.org/wiki/Kernel_density_estimation">Learn more about kernel density estimation</a>.</p></li><li><p><a href="https://bl.ocks.org/mbostock/4341954">A D3 + JavaScript KDE reference</a>.</p></li></ul></div></div></div></div></div></div></div></div>
+    <script src="static/idyll_index.js"></script>
   </body>
 </html>
